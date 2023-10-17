@@ -12,7 +12,7 @@ class Location {
     }
 }
 
-const locations = [new Location("Strakonice", 49.26950, 13.90641), new Location("Kralupy nad Vltavou", 50.24169, 14.31016), new Location("Hrad Kost", 50.49020, 15.13520)];
+const locations = [new Location("Strakonice", 49.26950, 13.90641), new Location("Kralupy nad Vltavou", 50.24169, 14.31016), new Location("Hrad Kost", 50.49020, 15.13520), new Location("Dolní Morava", 50.12242, 16.79969), new Location("Havířov", 49.78049, 18.43073), new Location("Lednice", 48.80002, 16.80350)];
 locations.forEach(element => { console.log(element) });
 
 $('.custom-btn-container').draggable();
@@ -30,7 +30,7 @@ function checkAnswer()
     const pinX = pinPosition[0], pinY = pinPosition[1];
     const correctX = currentLocation.coordinateX, correctY = currentLocation.coordinateY;
     console.log("Correct - " + correctX + ", " + correctY);
-    var coordinates = convertCoordinatesToMap(correctX, correctY);
+    let coordinates = convertCoordinatesToMap(correctX, correctY);
     console.log(coordinates[0]); console.log(coordinates[1]);
     elementCorrect.style.left = coordinates[0] + 'px';
     elementCorrect.style.top = coordinates[1]  + 'px';
@@ -67,25 +67,25 @@ function getPinPosition()
 
 function convertCoordinatesToMap(coordinateX, coordinateY)
 {
-    console.log(coordinateX);
     //const north = 51.08000, 14.32000; west = 50.25200, 12.06500; south = 48.53000, 14.33300; east = 49.55000, 18.90000;
     const north = 51.08000, south = 48.53000, west = 12.06500, east = 18.90000;
-    var a1 = north-south; 
-    var b1 = coordinateX-south;
-    var c1 = 100*b1/a1;
-    var d1 = elementMap.offsetHeight/100*c1;
 
     var a2 = east-west; 
     var b2 = coordinateY-west;
-    var c2 = 100*b2/a2;
-    var d2 = elementMap.offsetWidth/100*c2;
+    var c2 = (b2/a2);
+    var d2 = 1035*c2-20;
 
-    console.log(`Convert - X: ${a1}, Y: ${a2}`);
-    console.log(`Convert - X: ${b1}, Y: ${b2}`);
-    console.log(`Convert - X: ${c1}, Y: ${c2}`);
-    console.log(`Convert - X: ${d1}, Y: ${d2}`);
+    var a1 = north-south; 
+    var b1 = coordinateX-south;
+    var c1 = 1-(b1/a1);
+    var d1 = 600*c1-20;
 
-    return [d1, d2];
+    console.log(`Convert - X: ${a2}, Y: ${a1}`);
+    console.log(`Convert - X: ${b2}, Y: ${b1}`);
+    console.log(`Convert - X: ${c2}, Y: ${c1}`);
+    console.log(`Convert - X: ${d2}, Y: ${d1}`);
+
+    return [d2, d1];
 }
 
 function getDistance(x1, y1, x2, y2){
