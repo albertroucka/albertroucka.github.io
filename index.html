@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="outer-container">
-      <div id="player1" class="player">
-        <div id="player1-image" class="player-image"></div>
+      <div id="player0" class="player">
+        <div id="player0-image" class="player-image"></div>
         <div class="inner-container">
-          <div id="player1-nickname" class="player-nickname">Hráč 1</div>
-          <div id="player1-score" class="player-score">100</div>
+          <div id="player0-nickname" class="player-nickname">Hráč 1</div>
+          <div id="player0-score" class="player-score">100</div>
         </div>
       </div>
       <!-- <div id="player2" class="player">
@@ -44,8 +44,12 @@
       </div>-->
     </div>
     <div id="custom-map-container" class="bg"></div>
-    <div id="custom-btn-container2" class="custom-btn-container2"></div>
-    <div id="custom-btn-container" class="custom-btn-container" ondblclick="checkMapPositionAnswer()"></div>
+    <div id="custom-btn-container2" class="custom-btn-container2">
+      <div id="custom-btn-container2-more" class="custom-btn-container2-more"></div>
+    </div>
+    <div id="custom-btn-container" class="custom-btn-container" ondblclick="elementPinDoubleClick()">
+      <div id="custom-btn-container-middle" class="custom-btn-container-middle"></div>
+    </div>
     <div id="map-desctiption" class="description"></div>
 
     <div class="outer-container">
@@ -79,6 +83,7 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
     <script src="/js/main.js"></script> 
   </body>
 </html>

@@ -2,6 +2,7 @@
 body, html {
     height: 100%;
     margin: 0;
+    background-color: orange;
   }
 
   .outer-container{
@@ -14,7 +15,7 @@ body, html {
   }
 
   .player {
-    border: 3px solid black; 
+    border: 1px solid black; 
     width: 200px; 
     height: 100px;
     display: flex;  
@@ -34,6 +35,9 @@ body, html {
     width: 125px; 
     height: 45px;
     font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .player-score {
@@ -41,6 +45,9 @@ body, html {
     width: 125px; 
     height: 51px;
     font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .bg {
@@ -48,16 +55,18 @@ body, html {
     width: 1035px; height: 600px;
     background-position: top left;
     background-repeat: no-repeat;
+    font-size: 25px;
   }
 
 /*Pohyblivé tlačítko - Pin*/
 .custom-btn-container {
-    height: 40px;
-    width: 40px;
-    background: #a88900;
+    height: 25px;
+    width: 25px;
+    background: blue;
     border-radius: 50%;
+    border: 5px solid white; 
     position: absolute;
-    top: 120px;
+    top: 135px;
     left: 10px;
     cursor: pointer;
     display: flex;
@@ -66,28 +75,45 @@ body, html {
     visibility: hidden;
 }
 
+.custom-btn-container-middle {
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
+
 /*Správná pozice*/
 .custom-btn-container2 {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   background: #777777;
   border-radius: 50%;
   position: absolute;
   top: 10px;
   left: 10px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   visibility: hidden;
 }
 
+.custom-btn-container2-more {
+  height: 70px;
+  width: 70px;
+  background-color: #777777;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.5;
+}
+
+/**/
 .description {
   margin-left: 5px;
   display: flex;
   height: 55px;
   width: 1000px;
   border: 3px solid black; 
+  visibility: hidden;
 }
 
 .letterBox {
