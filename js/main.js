@@ -5,7 +5,11 @@ const elementDescription = document.getElementById("map-desctiption");
 const divTextAnswer = document.getElementById("custom-text-input");
 const elementTextAnswer = document.getElementById("location-input-text");
 
-const players = []; var currentLocation; var state; var round; var score; const type = 0;
+const type = document.getElementById("js-start").getAttribute("gameType");
+const difficulty = document.getElementById("js-start").getAttribute("gameDifficulty");
+const nickname = document.getElementById("js-start").getAttribute("playerNickname");
+
+const players = []; var currentLocation; var state; var round; var score;
 
 class Location {
     constructor(name, type, coordinateX, coordinateY, description) {
@@ -41,7 +45,8 @@ function getAllLocations()
 }
 
 //Spuštění/začátek
-players.push(new Player("Hráč 1", 0));
+console.log(type);
+players.push(new Player(nickname, 0));
 players.forEach(refreshPlayer);
 const locations = getAllLocations();
 locations.forEach(element => { console.log(element) });
@@ -59,10 +64,13 @@ function startRound()
     divTextAnswer.style.visibility = "visible";
     $('.custom-btn-container').draggable("enable");
 
-    if (type == 0) {
+    if (type == "anagrams") {
         showAllLetters(mixedLetters(currentLocation.name));
-    } else {
+    } else if (type == "flashing-letters") {
         flashingLetters(currentLocation.name);
+    } else {
+        alert("Při spouštění hry došlo k chybě!");
+        window.location.href="index.html";
     }
 }
 

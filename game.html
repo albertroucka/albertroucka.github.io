@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slepá mapa</title>
+    <link rel="stylesheet" href="/styles/style-game.css">
+</head>
+<body>
+    <div class="outer-container">
+      <div id="player0" class="player">
+        <div id="player0-image" class="player-image"></div>
+        <div class="inner-container">
+          <div id="player0-nickname" class="player-nickname"></div>
+          <div id="player0-score" class="player-score"></div>
+        </div>
+      </div>
+      <!-- <div id="player2" class="player">
+        <div id="player1-image" class="player-image"></div>
+        <div class="inner-container">
+          <div id="player1-nickname" class="player-nickname">Hráč 2</div>
+          <div id="player1-score" class="player-score">200</div>
+        </div>
+      </div>
+      <div id="player3" class="player">
+        <div id="player1-image" class="player-image"></div>
+        <div class="inner-container">
+          <div id="player1-nickname" class="player-nickname">Hráč 3</div>
+          <div id="player1-score" class="player-score">300</div>
+        </div>
+      </div>
+      <div id="player4" class="player">
+        <div id="player1-image" class="player-image"></div>
+      <div class="inner-container">
+        <div id="player1-nickname" class="player-nickname">Hráč 4</div>
+        <div id="player1-score" class="player-score">400</div>
+      </div></div>
+      <div id="player5" class="player">
+        <div id="player1-image" class="player-image"></div>
+        <div class="inner-container">
+          <div id="player1-nickname" class="player-nickname">Hráč 5</div>
+          <div id="player1-score" class="player-score">500</div>
+        </div>
+      </div>-->
+    </div>
+    <div id="custom-map-container" class="bg"></div>
+    <div id="custom-btn-container2" class="custom-btn-container2">
+      <div id="custom-btn-container2-more" class="custom-btn-container2-more"></div>
+    </div>
+    <div id="custom-btn-container" class="custom-btn-container" ondblclick="elementPinDoubleClick()">
+      <div id="custom-btn-container-middle" class="custom-btn-container-middle"></div>
+    </div>
+    <div id="map-desctiption" class="description"></div>
+
+    <div class="outer-container">
+      <div id="letter0" class="letterBox"></div>
+      <div id="letter1" class="letterBox"></div>
+      <div id="letter2" class="letterBox"></div>
+      <div id="letter3" class="letterBox"></div>
+      <div id="letter4" class="letterBox"></div>
+      <div id="letter5" class="letterBox"></div>
+      <div id="letter6" class="letterBox"></div>
+      <div id="letter7" class="letterBox"></div>
+      <div id="letter8" class="letterBox"></div>
+      <div id="letter9" class="letterBox"></div>
+      <div id="letter10" class="letterBox"></div>
+      <div id="letter11" class="letterBox"></div>
+      <div id="letter12" class="letterBox"></div>
+      <div id="letter13" class="letterBox"></div>
+      <div id="letter14" class="letterBox"></div>
+      <div id="letter15" class="letterBox"></div>
+      <div id="letter16" class="letterBox"></div>
+      <div id="letter17" class="letterBox"></div>
+      <div id="letter18" class="letterBox"></div>
+      <div id="letter19" class="letterBox"></div>
+      <div id="letter20" class="letterBox"></div>
+    </div>
+
+    <div id="custom-text-input" class="custom-text-input">
+        <input id="location-input-text" type="text">
+        <input id="location-input-submit" type="submit" value="Potvrdit" onclick="checkLocationGuessAnswer()"> 
+    </div>
+    <input id="map-location-submit" type="submit" value="Potvrdit polohu/Pokračovat" onclick="elementPinDoubleClick()">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js" integrity="sha512-0bEtK0USNd96MnO4XhH8jhv3nyRF0eK87pJke6pkYf3cM0uDIhNJy9ltuzqgypoIFXw3JSuiy04tVk4AjpZdZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!---<script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>--->
+    <script id="js-start" gameType="flashing-letters" gameDifficulty="" playerNickname="Albert" src="/js/main.js" defer></script>
+    <script>
+      function setValues()
+      {
+        const elementJS = document.getElementById("js-start");
+        elementJS.setAttribute("gameType", sessionStorage.getItem("gameType"));
+        elementJS.setAttribute("gameDifficulty", sessionStorage.getItem("gameDifficulty"));
+        elementJS.setAttribute("playerNickname", sessionStorage.getItem("playerNickname"));
+      }
+      setValues();
+    </script> 
+  </body>
+</html>
