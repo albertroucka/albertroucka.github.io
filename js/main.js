@@ -1,3 +1,4 @@
+const elementBody = document.getElementById("custom-body");
 const elementMap = document.getElementById("custom-map-container");
 const elementPin = document.getElementById("custom-btn-container");
 const elementCorrect = document.getElementById("custom-btn-container2");
@@ -9,7 +10,7 @@ const type = document.getElementById("js-start").getAttribute("gameType");
 const difficulty = document.getElementById("js-start").getAttribute("gameDifficulty");
 const nickname = document.getElementById("js-start").getAttribute("playerNickname");
 
-const players = []; var currentLocation; var state; var round; var score;
+const players = []; var currentLocation; var state; var round; var score; var usedLocations = [];
 
 class Location {
     constructor(name, type, coordinateX, coordinateY, description) {
@@ -28,7 +29,7 @@ class Player {
     }
 }
 
-function getAllLocations()
+/*function getAllLocations()
 {
     return [
         new Location("Strakonice", "Město", 49.26950, 13.90641, "Strakonice jsou město na soutoku Otavy a Volyňky. Žije zde 22 583 obyvatel. Na rozdíl od mnoha měst v Čechách a na Moravě nebyly Strakonice založeny jako královské město, ale vznikaly postupným slučováním čtyř menších osad: Strakonic, Bezděkova, Žabokrt a Lomu, které se spojily v poddanské město Strakonice."), 
@@ -42,24 +43,37 @@ function getAllLocations()
         new Location("Sněžka", "Hora", 50.73597, 15.73966, "Sněžka se nachází ve východní části Krkonoš na Hraničním hřebenu. Přes její vrchol prochází česko-polská státní hranice. První v historii zaznamenaný výstup je z roku 1456, kdy jistý Benátčan hledal v horách drahé kamení. Název Sněžka pochází z 19. století, je odvozen od pojmenování Sněžná – jako „sněhem pokrytá“."),
         new Location("Máchovo jezero", "Jezero", 50.58349, 14.64984, "Největší umělá vodní plocha (278 ha) Máchova kraje byla založena jako Velký rybník císařem Karlem IV. v roce 1367. Nachází se v nadmořské výšce 266 m. Díky krajině, ve které je zasazeno, je dnes vyhledávaným turistickým cílem.")
     ];
+}*/
+
+function getAllJSONLocations()
+{
+    const locations = [];
+
+    fetch("/database/Basic.json")
+        .then(response => response.json())
+        .then(data => data.forEach(element => { console.log(element.Name); locations.push(new Location(element.Name, element.Type, element.CoordinateX, element.CoordinateY, element.Description)); }))
+        .catch(error => console.error('Error fetching JSON:', error));
+
+    return locations;
 }
 
 //Spuštění/začátek
 console.log(type);
 players.push(new Player(nickname, 0));
 players.forEach(refreshPlayer);
-const locations = getAllLocations();
+const locations = getAllJSONLocations();
 locations.forEach(element => { console.log(element) });
 $('.custom-btn-container').draggable();
 round = 0;
-startRound();
+setTimeout(() => { elementBody.style.visibility = "visible"; startRound(); }, 100);
 getCurrentBrowserZoom();
 getCurrentBrowserSize();
 //konec začátku
 
 function startRound()
 {
-    currentLocation = locations[Math.floor(Math.random()*locations.length)];
+    currentLocation = getNewLocation();
+    usedLocations.push(currentLocation);
     round++; elementMap.textContent = "Kolo " + round;
     divTextAnswer.style.visibility = "visible";
     $('.custom-btn-container').draggable("enable");
@@ -72,6 +86,21 @@ function startRound()
         alert("Při spouštění hry došlo k chybě!");
         window.location.href="index.html";
     }
+}
+
+function getNewLocation()
+{
+    var check = "true";
+    console.log(check);
+    while(check == "true")
+    {
+        check = "false";
+        var quest = locations[Math.floor(Math.random()*locations.length)];
+        usedLocations.forEach(element => { console.log("Dvojice: " + element.name + " a " + quest.name); if(element.name == quest.name) { check = "true"; } });
+        console.log(check);
+    }
+    console.log(check);
+    return quest;
 }
 
 function refreshPlayer(item, index)
@@ -396,4 +425,5 @@ function finishGame()
     state = "end";
     console.log(players[0]);
     alert("Konec hry " + players[0].name + "! Celkové skóre je " + players[0].score + "!");
+    window.location.href="index.html";
 }

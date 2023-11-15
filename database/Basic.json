@@ -1,0 +1,72 @@
+[
+ {
+  "Name": "Dolní Morava",
+  "Type": "Obec",
+  "CoordinateX": "50.12242",
+  "CoordinateY": "16.79969",
+  "Description": "Dolní Morava je malá obec s 421 obyvateli. Obec je známým horským lyžařským střediskem. Část obce náleží do Národní přírodní rezervace Králický Sněžník, a právě ten je dominantou zdejšího kraje. Od roku 2022 se také v její blízkosti nachází nejdelší vistutý most pro pěší na světe."
+ },
+ {
+  "Name": "Havířov",
+  "Type": "Město",
+  "CoordinateX": "49.78049",
+  "CoordinateY": "18.43073",
+  "Description": "Město bylo založeno v roce 1955 sloučením několika menších obcí a vesnic v rámci těžby černého uhlí. Havířov byl vytvořen jako plánované město pro pracovníky a jejich rodiny spojené s těžbou a hutnictvím. Mezi zajímavé pamětihodnosti patří například kostel svatého Jana Křtitele, radnice a areály bývalých průmyslových závodů, které odrážejí historii města."
+ },
+ {
+  "Name": "Hrad Kost",
+  "Type": "Hrad",
+  "CoordinateX": "50.49020",
+  "CoordinateY": "15.13520",
+  "Description": "Zachovalý pevný gotický hrad, jehož založení se datuje do 2. poloviny 14. století. Po třicetileté válce unikl osudu jiných hradů určených k likvidaci, od poloviny 18. století však pustnul. Hrad patří k těm, jejichž výrazná silueta se nezapomíná, na Kosti především díky typické čtyřhranné věži."
+ },
+ {
+  "Name": "Kralupy nad Vltavou",
+  "Type": "Město",
+  "CoordinateX": "50.24169",
+  "CoordinateY": "14.31016",
+  "Description": "Kralupy nad Vltavou jsou známé především díky svému průmyslu, zejména petrochemickému a chemickému průmyslu. Historie města sahá až do středověku, kdy se zde rozvíjelo rybářství a obchod na řece Vltavě. Mezi zajímavé pamětihodnosti patří kostel svatého Václava, městská muzea a další historické budovy."
+ },
+ {
+  "Name": "Lednice",
+  "Type": "Obec",
+  "CoordinateX": "48.80002",
+  "CoordinateY": "16.80350",
+  "Description": "Lednice je obec se 2255 obyvateli, která je ze severu obtékána řekou Zámeckou Dyjí. Zdejší lichtenštejnský zámek s rozsáhlým parkem patří mezi nejvyhledávanější turistické destinace v celém Česku, spolu s Valticemi je centrem Lednicko-valtického areálu."
+ },
+ {
+  "Name": "Luhačovice",
+  "Type": "Město",
+  "CoordinateX": "49.09982",
+  "CoordinateY": "17.75747",
+  "Description": "Lázeňské město leží v malebném údolí chráněné krajinné oblasti Bílé Karpaty. Unikátní léčivé prameny činí z Luhačovic špičkové léčebné lázně v celoevropském měřítku. Specializují se na lázeňskou léčbu onemocnění dýchacích cest. Nejznámějším léčivým pramenem je Vincentka."
+ },
+ {
+  "Name": "Máchovo jezero",
+  "Type": "Jezero",
+  "CoordinateX": "50.58349",
+  "CoordinateY": "14.64984",
+  "Description": "Největší umělá vodní plocha (278 ha) Máchova kraje byla založena jako Velký rybník císařem Karlem IV. v roce 1367. Nachází se v nadmořské výšce 266 m. Díky krajině, ve které je zasazeno, je dnes vyhledávaným turistickým cílem."
+ },
+ {
+  "Name": "Propast Macocha",
+  "Type": "Příroda",
+  "CoordinateX": "49.37324",
+  "CoordinateY": "16.72982",
+  "Description": "Propast hluboká 138 metrů vznikla zřícením stropu velké jeskyně. Její horní část je dlouhá 174 metrů a široká 76 metrů. Jako první sestoupil do propasti mnich Lazar Schopper v roce 1723. Na okraji propasti najdete dva vyhlídkové můstky. Na dně se nachází významná botanická lokalita."
+ },
+ {
+  "Name": "Sněžka",
+  "Type": "Hora",
+  "CoordinateX": "50.73597",
+  "CoordinateY": "15.73966",
+  "Description": "Sněžka se nachází ve východní části Krkonoš na Hraničním hřebenu. Přes její vrchol prochází česko-polská státní hranice. První v historii zaznamenaný výstup je z roku 1456, kdy jistý Benátčan hledal v horách drahé kamení. Název Sněžka pochází z 19. století, je odvozen od pojmenování Sněžná – jako „sněhem pokrytá“."
+ },
+ {
+  "Name": "Strakonice",
+  "Type": "Město",
+  "CoordinateX": "49.26950",
+  "CoordinateY": "13.90641",
+  "Description": "Strakonice jsou město na soutoku Otavy a Volyňky. Žije zde 22 583 obyvatel. Na rozdíl od mnoha měst v Čechách a na Moravě nebyly Strakonice založeny jako královské město, ale vznikaly postupným slučováním čtyř menších osad: Strakonic, Bezděkova, Žabokrt a Lomu, které se spojily v poddanské město Strakonice."
+ }
+]
