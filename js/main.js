@@ -5,6 +5,7 @@ const elementCorrect = document.getElementById("custom-btn-container2");
 const elementDescription = document.getElementById("map-desctiption");
 const divTextAnswer = document.getElementById("custom-text-input");
 const elementTextAnswer = document.getElementById("location-input-text");
+const elementConfirm = document.getElementById("map-location-submit");
 
 const type = document.getElementById("js-start").getAttribute("gameType");
 const difficulty = document.getElementById("js-start").getAttribute("gameDifficulty");
@@ -276,6 +277,7 @@ function checkLocationGuessAnswer()
         elementPin.style.visibility = "visible";
         showAllLettersColor(currentLocation.name);
         showAllLetters(currentLocation.name);
+        elementConfirm.style.visibility = "visible";
     }
     else
     {
@@ -296,7 +298,7 @@ elementTextAnswer.addEventListener("keypress", function(event) {
     }
 });
 
-function elementPinDoubleClick() {
+function confirmMapPinAnswer() {
 
     if (state == "finished")
     {
@@ -340,9 +342,10 @@ function checkMapPositionAnswer()
 
 function getPinPosition()
 {
-    var rect = elementPin.getBoundingClientRect();
-    const x = rect.left;
-    const y = rect.top;
+    var bodyRect = document.body.getBoundingClientRect();
+    var elemRect = elementPin.getBoundingClientRect();
+    const x = elemRect.left - bodyRect.left;
+    const y = elemRect.top - bodyRect.top;
 
     // Create a string with the position information
     const position = `Pin - X: ${x}, Y: ${y}`;
@@ -407,6 +410,7 @@ function finishRound()
     elementDescription.style.visibility = "hidden";
     elementPin.style.top = "135px"; elementPin.style.left = "10px";
     elementCorrect.style.visibility = "hidden";
+    elementConfirm.style.visibility = "hidden";
     elementDescription.textContent = null;
     cleanAllLetters(currentLocation.name);
 

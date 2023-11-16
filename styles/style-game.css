@@ -136,3 +136,9 @@ body, html {
   margin-left: 5px;
   margin-top: 5px;
 }
+
+.map-location-submit {
+  margin-left: 5px;
+  margin-top: 5px;
+  visibility: hidden;
+}
