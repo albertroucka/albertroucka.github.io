@@ -1,0 +1,523 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta content="initial-scale=1,maximum-scale=1" name="viewport"/>
+	<meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+	<meta content="yes" name="mobile-web-app-capable"/>
+	<meta content="#001932" id="theme-color" name="theme-color"/>
+	<meta content="FIDS - Departures" name="application-name"/>
+	<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+	<meta http-equiv="refresh" content="20" >
+	<style type="text/css">
+		:root {
+			font-size: 10px;
+			font-size: 1vw;
+		}
+
+		body {
+			box-sizing: border-box;
+		}
+
+		html, body {
+			height: 100%;
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+			font-family: 'Neo Sans Pro', Helvetica, Arial, Verdana, sans-serif;
+		}
+
+		table {
+			border-spacing: 0;
+			border-collapse: collapse;
+			table-layout: fixed;
+		}
+
+		table tr {
+			vertical-align: top;
+			margin: 0;
+			padding: 0;
+		}
+
+		table td {
+			margin: 0;
+			padding: 0;
+		}
+
+		.main-table {
+			width: 100%;
+			height: 100%;
+		}
+
+		.main-table__info {
+			height: 0;
+			background: #001932;
+		}
+
+		.main-table__heading {
+			height: 0;
+			background: #3399ff;
+		}
+		.main-table__heading td {
+			position: relative;
+		}
+		.main-table__heading td div {
+			overflow-y: scroll;
+		}
+		.main-table__heading td:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 2rem;
+			background: #3399ff;
+			height: 100%;
+			z-index: 10;
+		}
+		.main-table__scroller {
+			height: 100%;
+			overflow-y: scroll;
+		}
+
+		.table {
+			width: 100%;
+		}
+
+		.table__cell {
+			text-align: left;
+			overflow: hidden;
+		}
+
+		.table__cell.table__cell--warning {
+			color: #FF0000;
+		}
+
+		.table__cell.table__cell--alert {
+			color: #CCAA00;
+		}
+
+		.table__cell--schedule {
+			width: 7%;
+		}
+
+		.table--content td.table__cell--schedule,
+		.table--content th.table__cell--schedule,
+		.table--content td.table__cell--via {
+			padding-left: 0.5rem;
+		}
+
+		.table__cell--expected {
+			width: 0%;
+		}
+
+		.table__cell--destination {
+			width: 42%;
+		}
+
+		.table__cell--flight {
+			width: 8%;
+		}
+
+		.table__cell--checkin {
+			width: 10%;
+			text-align: center;
+			white-space: nowrap;
+		}
+
+		.table__cell--gate {
+			width: 7%;
+			text-align: center;
+		}
+
+		.table--heading th.table__cell--gate {
+			padding: 0;
+		}
+
+		.table__cell--remark {
+			width: 26%;
+			text-align: center;
+		}
+
+		.table__cell--via {
+			width: 100%;
+		}
+
+		:root td.table__cell--null {
+			height: 0;
+			padding: 0;
+		}
+
+		.table__cell--info {
+			width: 90%;
+		}
+
+		.table__cell--info-time {
+			width: 20rem;
+			padding-left: 5rem;
+		}
+
+		.table__cell--info-heading {
+			width: 100%;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.table__cell--info-logo {
+			width: 33rem;
+		}
+
+		.table__cell--info {
+
+		}
+
+		.table__row {
+		}
+
+		:root .table--content tr.table__row--last {
+			height: 100%;
+			background: #001932;
+		}
+
+		.table--info {
+			color: white;
+			font-size: 6rem;
+		}
+
+		.table--heading {
+			height: 0;
+			color: black;
+			font-size: 1.5rem;
+		}
+
+		.table--heading th {
+			padding: 1rem 0 1rem 0.5rem;
+			vertical-align: middle;
+		}
+
+		.table--content {
+			height: 100%;
+			color: white;
+			font-size: 1.8rem;
+			text-transform: uppercase;
+		}
+
+		.table--content tr {
+			height: 0;
+		}
+
+		.table--content td {
+			padding: 1rem 0.5rem;
+		}
+
+		.table--content tr:nth-child(odd), .table--content tr.odd {
+			background: #001932;
+		}
+
+		.table--content tr:nth-child(even), .table--content tr.even {
+			background: #365475;
+		}
+
+		.logo {
+			display: block;
+
+			background-origin: content-box;
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			width: 29rem;
+			height: 6rem;
+			margin: 1rem 5rem 1rem 0;
+
+			text-decoration: none;
+		}
+
+		.case, .spacer {
+			display: inline-block;
+
+			background-origin: content-box;
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			width: 3rem;
+		}
+
+		.case::before {
+			content: "\00a0";
+		}
+
+		.time {
+		}
+
+		.time__hours, .time__minutes {
+			width: 9rem;
+			display: inline-block;
+		}
+
+		.time__hours {
+			text-align: right;
+		}
+
+		.time__minutes {
+			text-align: left;
+		}
+
+		.time__seconds {
+			animation: blink 2s infinite;
+		}
+
+		@-webkit-keyframes blink {
+			0% {
+				visibility: hidden;
+			}
+			49% {
+				visibility: hidden;
+			}
+			50% {
+				visibility: visible;
+			}
+			99% {
+				visibility: visible;
+			}
+			100% {
+				visibility: hidden;
+			}
+		}
+
+		@keyframes blink {
+			0% {
+				visibility: hidden;
+			}
+			49% {
+				visibility: hidden;
+			}
+			50% {
+				visibility: visible;
+			}
+			99% {
+				visibility: visible;
+			}
+			100% {
+				visibility: hidden;
+			}
+		}
+	</style>
+	<title>FIDS - Departures</title>
+</head>
+<body>
+<table class="main-table">
+	<tr class="main-table__info">
+		<td>
+			<table class="table table--info">
+				<tr>
+					<td class="table__cell table__cell--info">
+						<table class="table table--info">
+							<tr>
+								<td class="table__cell table__cell--info-time">
+									<div class="time">
+										<span class="time__hours" id="elmTimeHours"></span><span class="time__seconds">:</span><span class="time__minutes"
+																																	 id="elmTimeMinutes"></span>
+									</div>
+								</td>
+								<td class="table__cell table__cell--info-heading">HRABICE 67</td>
+								<td class="table__cell table__cell--info-logo"><a class="logo" href="./navigation"></a></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr class="main-table__heading">
+		<td>
+			<div>
+				<table class="table table--heading">
+					<tr>
+						<th class="table__cell table__cell--checkin">Datum</th>
+						<th class="table__cell table__cell--schedule">Plán.</th>
+						<!--<th class="table__cell table__cell--expected">Expected</th>-->
+						<th class="table__cell table__cell--flight">Linka</th>
+						<th class="table__cell table__cell--destination">Destinace</th>
+						<th class="table__cell table__cell--gate">Gate</th>
+						<th class="table__cell table__cell--remark">Status</th>
+					</tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="main-table__scroller">
+				<table class="table table--content">
+					<!-- EXTENDED ROW -->
+
+	<tr>
+		<td class="table__cell table__cell--checkin">03/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">09:30</td>
+		<td class="table__cell table__cell--flight">FA1231</td>
+		<td class="table__cell table__cell--destination">VIMPERK, LIDL</td>
+		<td class="table__cell table__cell--gate">A2</td>
+		<td class="table__cell table__cell--remark">ODJELO 09:32</td>
+	</tr>
+
+	<tr>
+		<td class="table__cell table__cell--checkin">03/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">13:50</td>
+		<td class="table__cell table__cell--flight">FA1241</td>
+		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
+		<td class="table__cell table__cell--gate">A1</td>
+		<td class="table__cell table__cell--remark">DEPARTED 13:54</td>
+	</tr>
+
+	<tr>
+		<td class="table__cell table__cell--checkin">03/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">17:20</td>
+		<td class="table__cell table__cell--flight">FA1226</td>
+		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
+		<td class="table__cell table__cell--gate">A1</td>
+		<td class="table__cell table__cell--remark">DEPARTED 17:28</td>
+	</tr>
+	
+	<tr>
+		<td class="table__cell table__cell--checkin">05/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">13:50</td>
+		<td class="table__cell table__cell--flight">FA1241</td>
+		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
+		<td class="table__cell table__cell--gate"></td>
+		<td class="table__cell table__cell--remark table__cell--warning"> </td>
+	</tr>    
+
+	<tr>
+		<td class="table__cell table__cell--checkin">05/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">20:00</td>
+		<td class="table__cell table__cell--flight">OL1056</td>
+		<td class="table__cell table__cell--destination">HORNÍ POŘÍČÍ</td>
+		<td class="table__cell table__cell--gate"></td>
+		<td class="table__cell table__cell--remark table__cell--alert"> </td>
+	</tr> 
+
+	<tr>
+		<td class="table__cell table__cell--checkin">06/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">16:00</td>
+		<td class="table__cell table__cell--flight">FA1226</td>
+		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
+		<td class="table__cell table__cell--gate"></td>
+		<td class="table__cell table__cell--remark"></td>
+	</tr>
+
+	<td colspan="7">PŘÍJEZDY:</td>
+
+	<tr>
+		<td class="table__cell table__cell--checkin">02/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">19:00</td>
+		<td class="table__cell table__cell--flight">FA1225</td>
+		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
+		<td class="table__cell table__cell--gate">A1</td>
+		<td class="table__cell table__cell--remark">PŘIJELO 19:32</td>
+	</tr>
+
+	<tr>
+		<td class="table__cell table__cell--checkin">03/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">10:15</td>
+		<td class="table__cell table__cell--flight">FA1232</td>
+		<td class="table__cell table__cell--destination">VIMPERK, LIDL</td>
+		<td class="table__cell table__cell--gate">A2</td>
+		<td class="table__cell table__cell--remark">ARRIVED 10:06</td>
+	</tr>
+
+	<tr>
+		<td class="table__cell table__cell--checkin">03/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">15:20</td>
+		<td class="table__cell table__cell--flight">FA1242</td>
+		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
+		<td class="table__cell table__cell--gate">A1</td>
+		<td class="table__cell table__cell--remark">ARRIVED 15:18</td>
+	</tr>
+
+	<tr>
+		<td class="table__cell table__cell--checkin">04/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">19:00</td>
+		<td class="table__cell table__cell--flight">FA1225</td>
+		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
+		<td class="table__cell table__cell--gate"></td>
+		<td class="table__cell table__cell--remark"></td>
+	</tr>
+
+	<tr>
+		<td class="table__cell table__cell--checkin">05/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">15:20</td>
+		<td class="table__cell table__cell--flight">FA1242</td>
+		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
+		<td class="table__cell table__cell--gate"></td>
+		<td class="table__cell table__cell--remark"></td>
+	</tr>
+
+	<tr>
+		<td class="table__cell table__cell--checkin">05/04/2026<span class="spacer"></span></td>
+		<td class="table__cell table__cell--schedule">16:00</td>
+		<td class="table__cell table__cell--flight">OL1055</td>
+		<td class="table__cell table__cell--destination">HORNÍ POŘÍČÍ</td>
+		<td class="table__cell table__cell--gate"></td>
+		<td class="table__cell table__cell--remark table__cell--alert"></td>
+	</tr> 
+                  
+<!-- KEEP LAST -->
+<tr class="table__row table__row--last">
+	<td colspan="7"></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+
+
+
+<style type="text/css">
+	.logo {
+		background-image: url('/spub/storage/byId/5f92d44ec601307913c7ba32?access-token=public-files');
+	}
+
+	.case--yes {
+		background-image: url(data:@file/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAoCAYAAAC8cqlMAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarY6xSsNQFEDPi6LiUCsEcXB4kygotupgxqQtRRCs1SHJ1qShSmkSXl7VfoSjWwcXd7/AyVFwUPwC/0Bx6uAQIYODCJ7p3MPlcsGo2HWnYZRhEGvVbjrS9Xw5+8QMUwDQCbPUbrUOAOIkjvjB5ysC4HnTrjsN/sZ8mCoNTIDtbpSFICpA/0KnGsQYMIN+qkHcAaY6addAPAClXu4vQCnI/Q0oKdfzQXwAZs/1fDDmADPIfQUwdXSpAWpJOlJnvVMtq5ZlSbubBJE8HmU6GmRyPw4TlSaqo6MukP8HwGK+2G46cq1qWXvr/DOu58vc3o8QgFh6LFpBOFTn3yqMnd/n4sZ4GQ5vYXpStN0ruNmAheuirVahvAX34y/Axk/96FpPYgAAACBjSFJNAAB6JQAAgIMAAPn/AACA6AAAUggAARVYAAA6lwAAF2/XWh+QAAABL0lEQVR42uyZ4WnDMBSEv1cygEdwNugIzgidoBmhmaBkgqzQTOJ0gmaDeARv8PqjCjXBkq3IFBruwCDsQ9wnPUkgm7vzCHriQSQQgQgkrVXqo5lldebuFXAA6glrB+zMrM/sP541+TEDJEBcgCq8OgO3QSvgObR7YJ0Dkzwq3D36ZI7WwX+1Tfi2A99b7oxEsy4I0oZwXzO8l+BtlwJZLbjedqF05pTKS4a3fLGHUaiB99sFbGaba6kAr7Nrebzuj2b2cZ3ZkY1hb2ZdEQjQTuxCNdAUDujnoD3WVwOs7z5H3L2ZsZX+heqQRSe7QAQiEIEIRCACEYhABCIQgQikEOTMgjcdBepDlqimrkx7d9/wc4tSRWwdcCoM2g3apxGIfcgSz6o/VgIRiED+lb4HAN1R16qcMUIRAAAAAElFTkSuQmCC);
+	}
+	.case--no {
+		background-image: url(data:@file/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAoCAYAAAC8cqlMAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarY6xSsNQFEDPi6LiUCsEcXB4kygotupgxqQtRRCs1SHJ1qShSmkSXl7VfoSjWwcXd7/AyVFwUPwC/0Bx6uAQIYODCJ7p3MPlcsGo2HWnYZRhEGvVbjrS9Xw5+8QMUwDQCbPUbrUOAOIkjvjB5ysC4HnTrjsN/sZ8mCoNTIDtbpSFICpA/0KnGsQYMIN+qkHcAaY6addAPAClXu4vQCnI/Q0oKdfzQXwAZs/1fDDmADPIfQUwdXSpAWpJOlJnvVMtq5ZlSbubBJE8HmU6GmRyPw4TlSaqo6MukP8HwGK+2G46cq1qWXvr/DOu58vc3o8QgFh6LFpBOFTn3yqMnd/n4sZ4GQ5vYXpStN0ruNmAheuirVahvAX34y/Axk/96FpPYgAAACBjSFJNAAB6JQAAgIMAAPn/AACA6AAAUggAARVYAAA6lwAAF2/XWh+QAAACc0lEQVR42uyZPVLrMBDH/3rDAXSEFBxA3CC+AQ31c0dJjsA7QWihEZyAtFR6dHT2DZIZOiiUG/xfYUNkW/7AlkIek53RZGzZu/rpY727ESTxE+QXfogcQY4gkeSkq1MIMUopSQVAtnRvhRD5SL3dnW1thKGUpGW/WJLnY0DamugasLsiLGZ4ASAXwMpj5BzAY3m5AfDQovbKWa1ECPG3oavsF8A2+IoQyAiwbKlHj3FmW3ZtO2dltAdCEbBlU4PH+gUQ64A0YBwQM2CLZL5nHYgPG+sYIIrAugazCOV1PBC+yRoPQnLxeYCtJZVixViacrI8PT02ILR2HUM6CYTkvOlvAsNkGSklWyBcmU0BufYaf3/Paod/HIzWrG0lyyxre3oeHoQ0BOQkGB8EoDreiAPy4e95erpuwFg7CqI8B/sH+XS7aVodmFLtMHUIKUmtrx193whCchCMD6I4EwcE0gfTDToZ5CRoLK3LiOP+vvjNcyBJAKV294Di2hhAyv2E8aNhpARubnYweR4VIl5itVzuVseVSBBxM8Tn5+a9zaZo/0Wqu90CZ2fVM+H2JUl1qx0kiG+gaVrdZrFggrnfvmBS62pwKCVpTDD3GwZkaETcHukeAMjbm/lSWO+DubhYfiuIN6vz5xL9MGU2uHeQ0RA9MPsFeXlZT4JwYWYzDtQTGGR4ajpMhqfOk0BmvRC3t5ZT5fV12ZNtWpJyUqWxrCBe4e5O4fLSDZK2ABKQv1ErpI2QBwixAmAquoqP6QrAHyFEHqrS6E1Ng36cm3UAE6NAp2NCeGAMaxX9IEXs0sgcwEYUReq9S+dYj3+GHkHiyL8BAHwr5FsIYeBOAAAAAElFTkSuQmCC);
+	}
+
+	@font-face {
+		font-family: 'Neo Sans Pro';
+		src: url('/spub/storage/byId/5ea2d21834ece57d9152a404?access-token=public-files');
+	}
+</style>
+<script language="JavaScript">
+	var elmTimeHours = document.getElementById("elmTimeHours");
+	var elmTimeMinutes = document.getElementById("elmTimeMinutes");
+
+	function updateTime() {
+		var dateTime = new Date();
+		var minutes = dateTime.getMinutes();
+		var hours = dateTime.getHours();
+
+		elmTimeHours.textContent = hours;
+		elmTimeMinutes.textContent = minutes < 10 ? "0" + minutes : minutes;
+	}
+
+	setInterval(function () {
+		updateTime();
+	}, 60000);
+	updateTime();
+
+</script>
+<!--
+Table cell RED TEXT .table__cell--warning
+Table cell RED TEXT .table__cell--alert
+Case icon NO CASE ICON (reserve space) <span class="case"></span>
+Case icon NO CASE <span class="case case--no"></span>
+Case icon YES CASE <span class="case case--yes"></span>
+-->
+</body>
+</html>
