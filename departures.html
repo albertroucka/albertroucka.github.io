@@ -304,8 +304,43 @@
 				visibility: hidden;
 			}
 		}
+
+		/*New code*/
+
+		.text-slide {
+			position: relative;
+			margin-top: -20px;
+			max-height: 20px;
+			line-height: 80px;
+			animation: text-animation ease 8s infinite;
+		}
+
+		@keyframes text-animation {
+			0% {
+				top: 0px;
+			}
+			20% {
+				top: 0px;
+			}
+			30% {
+				top: -80px;
+			}
+			50% {
+				top: -80px;
+			}
+			70% {
+				top: -80px;
+			}
+			80% {
+				top: 0px;
+			}
+			100%{
+				top: 0px;
+			}
+		}
+
 	</style>
-	<title>FIDS - Departures</title>
+	<title>Odjezdy/Příjezdy</title>
 </head>
 <body>
 <table class="main-table">
@@ -323,7 +358,7 @@
 									</div>
 								</td>
 								<td class="table__cell table__cell--info-heading">HRABICE 67</td>
-								<td class="table__cell table__cell--info-logo"><a class="logo" href="./navigation"></a></td>
+								<!--<td class="table__cell table__cell--info-logo"><a class="logo" href="./navigation"></a></td>-->
 							</tr>
 						</table>
 					</td>
@@ -360,7 +395,7 @@
 		<td class="table__cell table__cell--flight">FA1231</td>
 		<td class="table__cell table__cell--destination">VIMPERK, LIDL</td>
 		<td class="table__cell table__cell--gate">A2</td>
-		<td class="table__cell table__cell--remark">ODJELO 09:32</td>
+		<td class="table__cell table__cell--remark"><div class="text-slide">ODJELO 09:32<br>DEPARTED 09:32</div></td>
 	</tr>
 
 	<tr>
@@ -369,7 +404,7 @@
 		<td class="table__cell table__cell--flight">FA1241</td>
 		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark">DEPARTED 13:54</td>
+		<td class="table__cell table__cell--remark"><div class="text-slide">ODJELO 13:54<br>DEPARTED 13:54</div></td>
 	</tr>
 
 	<tr>
@@ -378,7 +413,7 @@
 		<td class="table__cell table__cell--flight">FA1226</td>
 		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark">DEPARTED 17:28</td>
+		<td class="table__cell table__cell--remark"><div class="text-slide">ODJELO 17:28<br>DEPARTED 17:28</div></td>
 	</tr>
 	
 	<tr>
@@ -393,7 +428,7 @@
 	<tr>
 		<td class="table__cell table__cell--checkin">05/04/2026<span class="spacer"></span></td>
 		<td class="table__cell table__cell--schedule">20:00</td>
-		<td class="table__cell table__cell--flight">OL1056</td>
+		<td class="table__cell table__cell--flight"><div class="text-slide">OL1056<br>FA2002</div></td>
 		<td class="table__cell table__cell--destination">HORNÍ POŘÍČÍ</td>
 		<td class="table__cell table__cell--gate"></td>
 		<td class="table__cell table__cell--remark table__cell--alert"> </td>
@@ -416,7 +451,7 @@
 		<td class="table__cell table__cell--flight">FA1225</td>
 		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark">PŘIJELO 19:32</td>
+		<td class="table__cell table__cell--remark"><div class="text-slide">PŘIJELO 19:32<br>ARRIVED 19:32</div></td>
 	</tr>
 
 	<tr>
@@ -425,7 +460,7 @@
 		<td class="table__cell table__cell--flight">FA1232</td>
 		<td class="table__cell table__cell--destination">VIMPERK, LIDL</td>
 		<td class="table__cell table__cell--gate">A2</td>
-		<td class="table__cell table__cell--remark">ARRIVED 10:06</td>
+		<td class="table__cell table__cell--remark"><div class="text-slide">PŘIJELO 10:06<br>ARRIVED 10:06</div></td>
 	</tr>
 
 	<tr>
@@ -434,7 +469,7 @@
 		<td class="table__cell table__cell--flight">FA1242</td>
 		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark">ARRIVED 15:18</td>
+		<td class="table__cell table__cell--remark"><div class="text-slide">PŘIJELO 15:18<br>ARRIVED 15:18</div></td>
 	</tr>
 
 	<tr>
@@ -442,7 +477,7 @@
 		<td class="table__cell table__cell--schedule">19:00</td>
 		<td class="table__cell table__cell--flight">FA1225</td>
 		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
-		<td class="table__cell table__cell--gate"></td>
+		<td class="table__cell table__cell--gate">A1</td>
 		<td class="table__cell table__cell--remark"></td>
 	</tr>
 
