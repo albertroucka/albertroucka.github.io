@@ -169,10 +169,11 @@
 		}
 
 		.table__cell--info {
-
+			
 		}
 
 		.table__row {
+			
 		}
 
 		:root .table--content tr.table__row--last {
@@ -309,33 +310,34 @@
 
 		.text-slide {
 			position: relative;
-			margin-top: -20px;
-			max-height: 20px;
-			line-height: 80px;
+			display:inline-flex;
+			margin-top: -4%;
+			max-height: 100%;
+			line-height: 0;
 			animation: text-animation ease 8s infinite;
 		}
 
 		@keyframes text-animation {
 			0% {
-				top: 0px;
+				top: 0;
 			}
 			20% {
-				top: 0px;
+				top: 0;
 			}
 			30% {
-				top: -80px;
+				top: -200%;
 			}
 			50% {
-				top: -80px;
+				top: -200%;
 			}
 			70% {
-				top: -80px;
+				top: -200%;
 			}
 			80% {
-				top: 0px;
+				top: 0;
 			}
 			100%{
-				top: 0px;
+				top: 0;
 			}
 		}
 
@@ -395,7 +397,7 @@
 		<td class="table__cell table__cell--flight">FA1231</td>
 		<td class="table__cell table__cell--destination">VIMPERK, LIDL</td>
 		<td class="table__cell table__cell--gate">A2</td>
-		<td class="table__cell table__cell--remark"><div class="text-slide">ODJELO 09:32<br>DEPARTED 09:32</div></td>
+		<td class="table__cell table__cell--remark">ODJELO 09:32</td>
 	</tr>
 
 	<tr>
@@ -404,7 +406,7 @@
 		<td class="table__cell table__cell--flight">FA1241</td>
 		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark"><div class="text-slide">ODJELO 13:54<br>DEPARTED 13:54</div></td>
+		<td class="table__cell table__cell--remark"><div class="text-slide">ODJELO 13:54<!--<br><p>DEPARTED 13:54</p>--></div></td>
 	</tr>
 
 	<tr>
@@ -413,7 +415,7 @@
 		<td class="table__cell table__cell--flight">FA1226</td>
 		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark"><div class="text-slide">ODJELO 17:28<br>DEPARTED 17:28</div></td>
+		<td class="table__cell table__cell--remark">ODJELO 17:28</td>
 	</tr>
 	
 	<tr>
@@ -428,7 +430,7 @@
 	<tr>
 		<td class="table__cell table__cell--checkin">05/04/2026<span class="spacer"></span></td>
 		<td class="table__cell table__cell--schedule">20:00</td>
-		<td class="table__cell table__cell--flight"><div class="text-slide">OL1056<br>FA2002</div></td>
+		<td class="table__cell table__cell--flight">OL1056</td>
 		<td class="table__cell table__cell--destination">HORNÍ POŘÍČÍ</td>
 		<td class="table__cell table__cell--gate"></td>
 		<td class="table__cell table__cell--remark table__cell--alert"> </td>
@@ -451,7 +453,7 @@
 		<td class="table__cell table__cell--flight">FA1225</td>
 		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark"><div class="text-slide">PŘIJELO 19:32<br>ARRIVED 19:32</div></td>
+		<td class="table__cell table__cell--remark">PŘIJELO 19:32</td>
 	</tr>
 
 	<tr>
@@ -460,7 +462,7 @@
 		<td class="table__cell table__cell--flight">FA1232</td>
 		<td class="table__cell table__cell--destination">VIMPERK, LIDL</td>
 		<td class="table__cell table__cell--gate">A2</td>
-		<td class="table__cell table__cell--remark"><div class="text-slide">PŘIJELO 10:06<br>ARRIVED 10:06</div></td>
+		<td class="table__cell table__cell--remark">PŘIJELO 10:06</td>
 	</tr>
 
 	<tr>
@@ -469,7 +471,7 @@
 		<td class="table__cell table__cell--flight">FA1242</td>
 		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark"><div class="text-slide">PŘIJELO 15:18<br>ARRIVED 15:18</div></td>
+		<td class="table__cell table__cell--remark">PŘIJELO 15:18</td>
 	</tr>
 
 	<tr>
@@ -478,7 +480,7 @@
 		<td class="table__cell table__cell--flight">FA1225</td>
 		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark"></td>
+		<td class="table__cell table__cell--remark">ZPOŽDĚNO</td>
 	</tr>
 
 	<tr>
