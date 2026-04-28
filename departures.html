@@ -7,7 +7,7 @@
 	<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="yes" name="mobile-web-app-capable"/>
 	<meta content="#001932" id="theme-color" name="theme-color"/>
-	<meta content="Departures" name="application-name"/>
+	<meta content="FIDS - Departures" name="application-name"/>
 	<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 	<meta http-equiv="refresh" content="20" >
 	<style type="text/css">
@@ -99,7 +99,8 @@
 		}
 
 		.table__cell--schedule {
-			width: 7%;
+			width: 5%;
+			text-align: center;
 		}
 
 		.table--content td.table__cell--schedule,
@@ -118,6 +119,7 @@
 
 		.table__cell--flight {
 			width: 8%;
+			text-align: center;
 		}
 
 		.table__cell--checkin {
@@ -133,6 +135,7 @@
 
 		.table--heading th.table__cell--gate {
 			padding: 0;
+			text-align: center;
 		}
 
 		.table__cell--remark {
@@ -308,16 +311,34 @@
 
 		/*New code*/
 
-		.text-slide {
+		.slide0 {
 			position: relative;
-			display:inline-flex;
-			margin-top: -4%;
+			display:block;
+			margin-top: 4.5%;
 			max-height: 100%;
-			line-height: 0;
-			animation: text-animation ease 8s infinite;
+			line-height: 0%;
+			animation: text-animation0 ease 8s infinite;
 		}
 
-		@keyframes text-animation {
+		.slide1 {
+			position: relative;
+			display:block;
+			margin-top: 0%;
+			max-height: 100%;
+			line-height: 0%;
+			animation: text-animation1 ease 8s infinite;
+		}
+
+		.slide2 {
+			position: relative;
+			display:block;
+			margin-top: 13%;
+			max-height: 100%;
+			line-height: 0%;
+			animation: text-animation0 ease 8s infinite;
+		}
+
+		@keyframes text-animation0 {
 			0% {
 				top: 0;
 			}
@@ -338,6 +359,30 @@
 			}
 			100%{
 				top: 0;
+			}
+		}
+
+		@keyframes text-animation1 {
+			0% {
+				top: 200%;
+			}
+			20% {
+				top: 200%;
+			}
+			30% {
+				top: 0;
+			}
+			50% {
+				top: 0;
+			}
+			70% {
+				top: 0;
+			}
+			80% {
+				top: 200%;
+			}
+			100%{
+				top: 200%;
 			}
 		}
 
@@ -397,7 +442,7 @@
 		<td class="table__cell table__cell--flight">FA1231</td>
 		<td class="table__cell table__cell--destination">VIMPERK, LIDL</td>
 		<td class="table__cell table__cell--gate">A2</td>
-		<td class="table__cell table__cell--remark">ODJELO 09:32</td>
+		<td class="table__cell table__cell--remark"><div class="slide0">Odjelo 09:32</div><div class="slide1">DEPARTED 09:32</div></td>
 	</tr>
 
 	<tr>
@@ -405,53 +450,49 @@
 		<td class="table__cell table__cell--schedule">13:50</td>
 		<td class="table__cell table__cell--flight">FA1241</td>
 		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
-		<td class="table__cell table__cell--gate">A2</td>
-		<td class="table__cell table__cell--remark"><div class="text-slide">ODJELO 13:54<!--<br><p>DEPARTED 13:54</p>--></div></td>
+		<td class="table__cell table__cell--gate">A1</td>
+		<td class="table__cell table__cell--remark"><div class="slide0">Odjelo 13:54</div><div class="slide1">DEPARTED 13:54</div></td>
 	</tr>
 
 	<tr>
 		<td class="table__cell table__cell--checkin">03/04/2026<span class="spacer"></span></td>
-		<td class="table__cell table__cell--schedule">17:00</td>
+		<td class="table__cell table__cell--schedule">17:20</td>
 		<td class="table__cell table__cell--flight">FA1226</td>
 		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark">ODJELO 17:28</td>
+		<td class="table__cell table__cell--remark"><div class="slide0">Odjelo 17:28</div><div class="slide1">DEPARTED 17:28</div></td>
 	</tr>
-					
-	<tr>
-		<td class="table__cell table__cell--checkin">05/04/2026<span class="spacer"></span></td>
-		<td class="table__cell table__cell--schedule">09:30</td>
-		<td class="table__cell table__cell--flight">FA1231</td>
-		<td class="table__cell table__cell--destination">VIMPERK, LIDL</td>
-		<td class="table__cell table__cell--gate"></td>
-		<td class="table__cell table__cell--remark table__cell--warning">Zrušeno</td>
-	</tr>
-					
+	
 	<tr>
 		<td class="table__cell table__cell--checkin">05/04/2026<span class="spacer"></span></td>
 		<td class="table__cell table__cell--schedule">13:50</td>
 		<td class="table__cell table__cell--flight">FA1241</td>
 		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
-		<td class="table__cell table__cell--gate">A2</td>
-		<td class="table__cell table__cell--remark">Odjelo 14:46</td>
+		<td class="table__cell table__cell--gate">A1</td>
+		<td class="table__cell table__cell--remark table__cell--warning"><div class="slide0">Poslední výzva</div><div class="slide1">LAST CALL</div></td>
 	</tr>    
 
 	<tr>
 		<td class="table__cell table__cell--checkin">05/04/2026<span class="spacer"></span></td>
 		<td class="table__cell table__cell--schedule">20:00</td>
-		<td class="table__cell table__cell--flight">OL1056</td>
+		<td class="table__cell table__cell--flight"><div class="slide2">OL1056</div><div class="slide1">FA3020</div></td>
 		<td class="table__cell table__cell--destination">HORNÍ POŘÍČÍ</td>
-		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark">Odjelo 20:39</td>
+		<td class="table__cell table__cell--gate">A7</td>
+		<td class="table__cell table__cell--remark table__cell--alert"><div class="slide0">Nástup</div><div class="slide1">BOARDING</div></td>
 	</tr> 
+	<!--<tr>
+		<td class="table__cell table__cell--null" colspan="7"></td>
+	</tr>
+	<td colspan="2"></td>
+	<td colspan="5">Via STRAKONICE</td>-->
 
 	<tr>
 		<td class="table__cell table__cell--checkin">06/04/2026<span class="spacer"></span></td>
-		<td class="table__cell table__cell--schedule">17:00</td>
+		<td class="table__cell table__cell--schedule">16:00</td>
 		<td class="table__cell table__cell--flight">FA1226</td>
 		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
-		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark">Odjelo 17:20</td>
+		<td class="table__cell table__cell--gate"></td>
+		<td class="table__cell table__cell--remark"><div class="slide0"></div><div class="slide1"></div></td>
 	</tr>
 
 	<td colspan="7">PŘÍJEZDY:</td>
@@ -462,7 +503,7 @@
 		<td class="table__cell table__cell--flight">FA1225</td>
 		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark">PŘIJELO 19:32</td>
+		<td class="table__cell table__cell--remark"><div class="slide0">PŘIJELO 19:32</div><div class="slide1">ARRIVED 19:32</div></td>
 	</tr>
 
 	<tr>
@@ -471,7 +512,7 @@
 		<td class="table__cell table__cell--flight">FA1232</td>
 		<td class="table__cell table__cell--destination">VIMPERK, LIDL</td>
 		<td class="table__cell table__cell--gate">A2</td>
-		<td class="table__cell table__cell--remark">PŘIJELO 10:06</td>
+		<td class="table__cell table__cell--remark"><div class="slide0">PŘIJELO 10:06</div><div class="slide1">ARRIVED 10:06</div></td>
 	</tr>
 
 	<tr>
@@ -479,8 +520,8 @@
 		<td class="table__cell table__cell--schedule">15:20</td>
 		<td class="table__cell table__cell--flight">FA1242</td>
 		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
-		<td class="table__cell table__cell--gate">A2</td>
-		<td class="table__cell table__cell--remark">PŘIJELO 15:18</td>
+		<td class="table__cell table__cell--gate">A1</td>
+		<td class="table__cell table__cell--remark"><div class="slide0">PŘIJELO 15:18</div><div class="slide1">ARRIVED 15:18</div></td>
 	</tr>
 
 	<tr>
@@ -489,25 +530,16 @@
 		<td class="table__cell table__cell--flight">FA1225</td>
 		<td class="table__cell table__cell--destination">PRAHA, ŘÍČANOVA</td>
 		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark">Přijelo 20:02</td>
-	</tr>
-	
-	<tr>
-		<td class="table__cell table__cell--checkin">05/04/2026<span class="spacer"></span></td>
-		<td class="table__cell table__cell--schedule">10:15</td>
-		<td class="table__cell table__cell--flight">FA1232</td>
-		<td class="table__cell table__cell--destination">VIMPERK, LIDL</td>
-		<td class="table__cell table__cell--gate"></td>
-		<td class="table__cell table__cell--remark table__cell--warning">Zrušeno</td>
+		<td class="table__cell table__cell--remark"><div class="slide0">ZPOŽDĚNO</div><div class="slide1">DELEYED</div></td>
 	</tr>
 
 	<tr>
 		<td class="table__cell table__cell--checkin">05/04/2026<span class="spacer"></span></td>
-		<td class="table__cell table__cell--schedule">15:45</td>
+		<td class="table__cell table__cell--schedule">15:20</td>
 		<td class="table__cell table__cell--flight">FA1242</td>
 		<td class="table__cell table__cell--destination">VIMPERK, NEMOCNICE</td>
-		<td class="table__cell table__cell--gate">A3</td>
-		<td class="table__cell table__cell--remark">Přijelo 15:38</td>
+		<td class="table__cell table__cell--gate"></td>
+		<td class="table__cell table__cell--remark"></td>
 	</tr>
 
 	<tr>
@@ -515,8 +547,8 @@
 		<td class="table__cell table__cell--schedule">16:00</td>
 		<td class="table__cell table__cell--flight">OL1055</td>
 		<td class="table__cell table__cell--destination">HORNÍ POŘÍČÍ</td>
-		<td class="table__cell table__cell--gate">A1</td>
-		<td class="table__cell table__cell--remark">Přijelo 15:46</td>
+		<td class="table__cell table__cell--gate"></td>
+		<td class="table__cell table__cell--remark table__cell--alert"></td>
 	</tr> 
                   
 <!-- KEEP LAST -->
