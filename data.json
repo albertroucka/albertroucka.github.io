@@ -19,8 +19,8 @@
       "sharecode": "",
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
-      "gate": "",
-      "status": ""
+      "gate": "A1",
+      "status": "C"
     }
   ],
   "dataJsonArrivals": [
