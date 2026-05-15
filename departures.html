@@ -771,6 +771,9 @@ function generateTable(departures,arrivals) {
 }
 
 // Spuštění generování po načtení skriptu
+setInterval(function () {
+	getData();
+	}, 60000);
 getData();
 </script>
 <!--
