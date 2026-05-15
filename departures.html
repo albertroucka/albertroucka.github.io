@@ -510,44 +510,13 @@
 </script>
 <script>
 //Zdroj dat
-const dataJsonDepartures = [
-    {
-        "date": "03/04/2026",
-        "time": "11:30",
-		"expected": "",
-        "route": "FA1231",
-		"sharecode": "",
-        "destination": "VIMPERK, LIDL",
-		"via": "",
-        "gate": "A2",
-        "status": "11:42",
-    }
-];
-
-dataJsonArrivals= [
-    {
-        "date": "14/04/2026",
-        "time": "19:30",
-		"expected": "",
-        "route": "FA1225",
-		"sharecode": "",
-        "destination": "PRAHA, ŘÍČANOVA",
-		"via": "",
-        "gate": "",
-        "status": "CL",
-    },
-	{
-        "date": "15/04/2026",
-        "time": "19:30",
-		"expected": "",
-        "route": "FA1225",
-		"sharecode": "",
-        "destination": "PRAHA, ŘÍČANOVA",
-		"via": "",
-        "gate": "A1",
-        "status": "D",
-    }
-];
+async function getData() {
+  	const response = await fetch('data.json');
+    const data = await response.json();
+    const dataJsonDepartures = data.dataJsonDepartures;
+    const dataJsonArrivals = data.dataJsonArrivals;
+	generateTable(dataJsonDepartures,dataJsonArrivals);
+}
 
 function generateTable(departures,arrivals) {
     const tBody = document.getElementById("table-departures");
@@ -802,7 +771,7 @@ function generateTable(departures,arrivals) {
 }
 
 // Spuštění generování po načtení skriptu
-generateTable(dataJsonDepartures,dataJsonArrivals);
+getData();
 </script>
 <!--
 Table cell RED TEXT .table__cell--warning
