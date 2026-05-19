@@ -20,7 +20,7 @@
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
       "gate": "A1",
-      "status": "C"
+      "status": "D"
     }
   ],
   "dataJsonArrivals": [
@@ -44,7 +44,7 @@
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
       "gate": "A1",
-      "status": "D"
+      "status": "A19:28"
     },
     {
       "date": "16/04/2026",
