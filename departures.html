@@ -427,7 +427,7 @@
 																																	 id="elmTimeMinutes"></span>
 									</div>
 								</td>
-								<td class="table__cell table__cell--info-heading">HRABICE 67</td>
+								<td class="table__cell table__cell--info-heading" id="station_name">HRABICE 67</td>
 								<!--<td class="table__cell table__cell--info-logo"><a class="logo" href="./navigation"></a></td>-->
 							</tr>
 						</table>
@@ -513,8 +513,11 @@
 async function getData() {
   	const response = await fetch('data.json');
     const data = await response.json();
+	const dataJsonStation = data.dataJsonStation;
     const dataJsonDepartures = data.dataJsonDepartures;
     const dataJsonArrivals = data.dataJsonArrivals;
+	const station = document.getElementById("station_name");
+	station.textContent = dataJsonStation[0].name;
 	generateTable(dataJsonDepartures,dataJsonArrivals);
 }
 
@@ -773,7 +776,7 @@ function generateTable(departures,arrivals) {
 // Spuštění generování po načtení skriptu
 setInterval(function () {
 	getData();
-	}, 60000);
+	}, 1000);
 getData();
 </script>
 <!--

@@ -1,4 +1,9 @@
 {
+  "dataJsonStation": [
+    {
+      "name": "HRABICE 67"
+    }
+  ],
   "dataJsonDepartures": [
     {
       "date": "03/04/2026",
@@ -10,17 +15,6 @@
       "via": "",
       "gate": "A2",
       "status": "11:42"
-    },
-    {
-      "date": "14/04/2026",
-      "time": "16:30",
-      "expected": "",
-      "route": "FA1226",
-      "sharecode": "",
-      "destination": "PRAHA, ŘÍČANOVA",
-      "via": "",
-      "gate": "A1",
-      "status": "D"
     }
   ],
   "dataJsonArrivals": [
@@ -44,7 +38,7 @@
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
       "gate": "A1",
-      "status": "A19:28"
+      "status": "D"
     },
     {
       "date": "16/04/2026",
