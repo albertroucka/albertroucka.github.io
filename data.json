@@ -12,8 +12,8 @@
       "route": "FA1231",
       "sharecode": "",
       "destination": "VIMPERK, LIDL",
-      "via": "",
-      "gate": "",
+      "via": "VIMPERK, COOP",
+      "gate": "A1",
       "status": ""
     }
   ],
