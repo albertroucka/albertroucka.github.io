@@ -7,7 +7,7 @@
 	<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="yes" name="mobile-web-app-capable"/>
 	<meta content="#001932" id="theme-color" name="theme-color"/>
-	<meta content="FIDS - Departures" name="application-name"/>
+	<meta content="Departures" name="application-name"/>
 	<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 	<meta http-equiv="refresh" content="20" >
 	<style type="text/css">
@@ -638,6 +638,9 @@ function generateTable(departures,arrivals) {
 			divCZ.textContent = "Odjelo " + item.status;
 			divEN.textContent = "DEPARTED " + item.status;
 		}
+		else {
+			tdStatus.className = "table__cell table__cell--remark";
+		}
 
         tdStatus.appendChild(divCZ);
         tdStatus.appendChild(divEN);
@@ -656,8 +659,22 @@ function generateTable(departures,arrivals) {
   				td.className = "";
   
   				// Pokud jsme na 5. sloupci, vložíme text
+				if (i === 3) {
+					td.className = "table__cell table__cell--flight";
+					const original = document.createElement("div");
+        			original.className = "slide2";
+        			original.textContent = "přes";
+
+        			const sharecode = document.createElement("div");
+        			sharecode.className = "slide1";
+        			sharecode.textContent = "VIA";
+
+        			td.appendChild(original);
+        			td.appendChild(sharecode);
+  				}
+
   				if (i === 4) {
-    				td.textContent = "VIA " + item.via;
+    				td.textContent = item.via;
   				}
   
   				tr.appendChild(td);
@@ -754,6 +771,9 @@ function generateTable(departures,arrivals) {
 			divCZ.textContent = "Zrušeno";
 			divEN.textContent = "CANCELLED";
 		}
+		else {
+			tdStatus.className = "table__cell table__cell--remark";
+		}
 
         tdStatus.appendChild(divCZ);
         tdStatus.appendChild(divEN);
@@ -774,9 +794,7 @@ function generateTable(departures,arrivals) {
 }
 
 // Spuštění generování po načtení skriptu
-setInterval(function () {
-	getData();
-	}, 1000);
+setInterval(function () { getData(); }, 8000);
 getData();
 </script>
 <!--

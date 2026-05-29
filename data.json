@@ -1,41 +1,39 @@
 {
   "dataJsonStation": [
     {
-      "name": "HRABICE 67"
+      "name": "HRABICE"
     }
   ],
   "dataJsonDepartures": [
     {
-      "date": "03/04/2026",
-      "time": "11:30",
+      "date": "30/05/2026",
+      "time": "10:30",
       "expected": "",
       "route": "FA1231",
       "sharecode": "",
       "destination": "VIMPERK, LIDL",
       "via": "",
-      "gate": "A2",
-      "status": "11:42"
+      "gate": "",
+      "status": ""
     }
   ],
   "dataJsonArrivals": [
     {
-      "date": "14/04/2026",
-      "time": "19:30",
-      "expected": "",
+      "date": "30/05/2026",
+      "time": "10:00",
       "route": "FA1225",
       "sharecode": "",
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
       "gate": "",
-      "status": "CL"
+      "status": ""
     },
     {
-      "date": "15/04/2026",
-      "time": "19:30",
-      "expected": "",
-      "route": "FA1225",
+      "date": "30/05/2026",
+      "time": "11:00",
+      "route": "FA1232",
       "sharecode": "",
-      "destination": "PRAHA, ŘÍČANOVA",
+      "destination": "VIMPERK, LIDL",
       "via": "",
       "gate": "A1",
       "status": "D"
@@ -43,12 +41,11 @@
     {
       "date": "16/04/2026",
       "time": "19:30",
-      "expected": "",
       "route": "FA1225",
       "sharecode": "",
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
-      "gate": "A1",
+      "gate": "",
       "status": ""
     }
   ]
