@@ -15,6 +15,28 @@
       "via": "VIMPERK, COOP",
       "gate": "",
       "status": "CL"
+    },
+    {
+      "date": "30/05/2026",
+      "time": "13:50",
+      "expected": "",
+      "route": "FA1241",
+      "sharecode": "",
+      "destination": "VIMPERK, NEMOCNICE",
+      "via": "",
+      "gate": "A1",
+      "status": ""
+    },
+    {
+      "date": "31/05/2026",
+      "time": "17:30",
+      "expected": "",
+      "route": "FA1226",
+      "sharecode": "",
+      "destination": "PRAHA, ŘÍČANOVA",
+      "via": "",
+      "gate": "",
+      "status": ""
     }
   ],
   "dataJsonArrivals": [
@@ -35,17 +57,17 @@
       "sharecode": "",
       "destination": "VIMPERK, LIDL",
       "via": "",
-      "gate": "A1",
+      "gate": "",
       "status": "CL"
     },
     {
-      "date": "16/04/2026",
-      "time": "19:30",
-      "route": "FA1225",
+      "date": "30/05/2026",
+      "time": "15:10",
+      "route": "FA1242",
       "sharecode": "",
-      "destination": "PRAHA, ŘÍČANOVA",
+      "destination": "VIMPERK, NEMOCNICE",
       "via": "",
-      "gate": "",
+      "gate": "A1",
       "status": ""
     }
   ]
