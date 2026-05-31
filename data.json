@@ -17,15 +17,15 @@
       "status": "CL"
     },
     {
-      "date": "30/05/2026",
+      "date": "31/05/2026",
       "time": "13:50",
-      "expected": "",
+      "expected": "14:20",
       "route": "FA1241",
       "sharecode": "",
       "destination": "VIMPERK, NEMOCNICE",
       "via": "",
       "gate": "A1",
-      "status": ""
+      "status": "14:23"
     },
     {
       "date": "31/05/2026",
@@ -35,8 +35,8 @@
       "sharecode": "",
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
-      "gate": "",
-      "status": ""
+      "gate": "A1",
+      "status": "C"
     }
   ],
   "dataJsonArrivals": [
@@ -47,7 +47,7 @@
       "sharecode": "",
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
-      "gate": "",
+      "gate": "A1",
       "status": "A09:46"
     },
     {
@@ -61,14 +61,14 @@
       "status": "CL"
     },
     {
-      "date": "30/05/2026",
+      "date": "31/05/2026",
       "time": "15:10",
       "route": "FA1242",
       "sharecode": "",
       "destination": "VIMPERK, NEMOCNICE",
       "via": "",
       "gate": "A1",
-      "status": ""
+      "status": "A16:32"
     }
   ]
 }
