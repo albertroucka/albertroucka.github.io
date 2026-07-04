@@ -13,7 +13,7 @@
       "sharecode": "",
       "destination": "SUDOMĚŘ",
       "via": "",
-      "gate": "1",
+      "gate": "4B",
       "status": ""
     },
     {
@@ -24,8 +24,8 @@
       "sharecode": "",
       "destination": "SUDOMĚŘ",
       "via": "",
-      "gate": "1A",
-      "status": ""
+      "gate": "4A",
+      "status": "NI13:30"
     },
     {
       "date": "04/07/2026",
@@ -35,7 +35,7 @@
       "sharecode": "FA3016",
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
-      "gate": "4",
+      "gate": "1A",
       "status": ""
     },
     {
@@ -46,7 +46,7 @@
       "sharecode": "",
       "destination": "VIMPERK, HRABICE",
       "via": "",
-      "gate": "1A",
+      "gate": "4A",
       "status": ""
     }
   ],
@@ -74,11 +74,11 @@
     {
       "date": "04/07/2026",
       "time": "15:00",
-      "route": "NO0789",
+      "route": "UN1287",
       "sharecode": "",
       "destination": "PLZEŇ",
       "via": "",
-      "gate": "4",
+      "gate": "1",
       "status": ""
     },
     {
@@ -88,7 +88,7 @@
       "sharecode": "",
       "destination": "SUDOMĚŘ",
       "via": "",
-      "gate": "4",
+      "gate": "4A",
       "status": ""
     },
     {
@@ -98,8 +98,8 @@
       "sharecode": "",
       "destination": "SUDOMĚŘ",
       "via": "",
-      "gate": "4",
-      "status": ""
+      "gate": "",
+      "status": "1"
     }
   ]
 }
