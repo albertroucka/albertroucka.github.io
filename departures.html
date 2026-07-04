@@ -633,6 +633,11 @@ function generateTable(departures,arrivals) {
 			divCZ.textContent = "Zrušeno";
 			divEN.textContent = "CANCELLED";
 		}
+		else if (item.status == "NI"){
+			tdStatus.className = "table__cell table__cell--remark";
+			divCZ.textContent = "Další informace " + item.status;
+			divEN.textContent = "Next info " + item.status;
+		}
 		else if (item.status.match(/^\d/)){
 			tdStatus.className = "table__cell table__cell--remark";
 			divCZ.textContent = "Odjelo " + item.status;
