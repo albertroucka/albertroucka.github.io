@@ -79,7 +79,7 @@
       "destination": "PLZEŇ",
       "via": "",
       "gate": "1",
-      "status": "E15:45"
+      "status": "A15:23"
     },
     {
       "date": "04/07/2026",
@@ -99,7 +99,7 @@
       "destination": "SUDOMĚŘ",
       "via": "",
       "gate": "4B",
-      "status": "E16:40"
+      "status": "E16:45"
     }
   ]
 }
