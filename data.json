@@ -24,8 +24,8 @@
       "sharecode": "",
       "destination": "SUDOMĚŘ",
       "via": "",
-      "gate": "4A",
-      "status": "NI14:00"
+      "gate": "",
+      "status": "CL"
     },
     {
       "date": "04/07/2026",
@@ -88,8 +88,8 @@
       "sharecode": "",
       "destination": "SUDOMĚŘ",
       "via": "",
-      "gate": "4A",
-      "status": ""
+      "gate": "",
+      "status": "CL"
     },
     {
       "date": "04/07/2026",
