@@ -635,8 +635,8 @@ function generateTable(departures,arrivals) {
 		}
 		else if (item.status.startsWith("NI") && item.status.length == 7){
 			tdStatus.className = "table__cell table__cell--remark";
-			divCZ.textContent = "Další informace " + item.status.slice(1);
-			divEN.textContent = "Next info " + item.status.slice(1);
+			divCZ.textContent = "Další informace " + item.status.slice(2);
+			divEN.textContent = "Next info " + item.status.slice(2);
 		}
 			
 		else if (item.status.match(/^\d/)){
