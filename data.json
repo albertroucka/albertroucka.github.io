@@ -75,11 +75,11 @@
       "date": "04/07/2026",
       "time": "15:00",
       "route": "UN1287",
-      "sharecode": "E15:45",
+      "sharecode": "",
       "destination": "PLZEŇ",
       "via": "",
       "gate": "1",
-      "status": ""
+      "status": "E15:45"
     },
     {
       "date": "04/07/2026",
