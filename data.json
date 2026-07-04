@@ -14,7 +14,7 @@
       "destination": "SUDOMĚŘ",
       "via": "",
       "gate": "4B",
-      "status": ""
+      "status": "A"
     },
     {
       "date": "04/07/2026",
@@ -25,7 +25,7 @@
       "destination": "SUDOMĚŘ",
       "via": "",
       "gate": "4A",
-      "status": "NI13:30"
+      "status": "NI14:00"
     },
     {
       "date": "04/07/2026",
