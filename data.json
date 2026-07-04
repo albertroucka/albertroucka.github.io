@@ -36,18 +36,18 @@
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
       "gate": "1A",
-      "status": "A"
+      "status": "21:00"
     },
     {
       "date": "04/07/2026",
-      "time": "21:00",
+      "time": "21:30",
       "expected": "",
       "route": "FA1212",
       "sharecode": "",
       "destination": "VIMPERK, HRABICE",
       "via": "",
       "gate": "4A",
-      "status": "A"
+      "status": "21:28"
     }
   ],
   "dataJsonArrivals": [
