@@ -36,7 +36,7 @@
       "destination": "VIMPERK, NEMOCNICE",
       "via": "",
       "gate": "A1",
-      "status": ""
+      "status": "NI15:00"
     },
     {
       "date": "19/07/2026",
@@ -47,7 +47,7 @@
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
       "gate": "",
-      "status": "Přesunuto z 18/07 18:00"
+      "status": ""
     }
   ],
   "dataJsonArrivals": [
