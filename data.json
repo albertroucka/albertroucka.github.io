@@ -1,105 +1,84 @@
 {
   "dataJsonStation": [
     {
-      "name": "HORNÍ POŘÍČÍ"
+      "name": "HRABICE 67"
     }
   ],
   "dataJsonDepartures": [
     {
-      "date": "04/07/2026",
-      "time": "14:00",
+      "date": "17/07/2026",
+      "time": "18:30",
       "expected": "",
-      "route": "OL1080",
+      "route": "FA1231",
       "sharecode": "",
-      "destination": "SUDOMĚŘ",
+      "destination": "Vimperk, Lidl",
       "via": "",
-      "gate": "4B",
-      "status": "14:12"
+      "gate": "A1",
+      "status": "18:22"
     },
     {
-      "date": "04/07/2026",
-      "time": "14:00",
+      "date": "18/07/2026",
+      "time": "10:15",
       "expected": "",
-      "route": "FA2280",
+      "route": "FA1240",
       "sharecode": "",
-      "destination": "SUDOMĚŘ",
+      "destination": "Vimperk, Aut. Nádraží",
       "via": "",
-      "gate": "",
-      "status": "CL"
+      "gate": "A1",
+      "status": ""
     },
     {
-      "date": "04/07/2026",
-      "time": "21:00",
+      "date": "18/07/2026",
+      "time": "18:00",
       "expected": "",
-      "route": "CS0768",
-      "sharecode": "FA3016",
+      "route": "FA1226",
+      "sharecode": "",
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
-      "gate": "1A",
-      "status": "21:00"
-    },
-    {
-      "date": "04/07/2026",
-      "time": "21:30",
-      "expected": "",
-      "route": "FA1212",
-      "sharecode": "",
-      "destination": "VIMPERK, HRABICE",
-      "via": "",
-      "gate": "4A",
-      "status": "21:28"
+      "gate": "",
+      "status": ""
     }
   ],
   "dataJsonArrivals": [
     {
-      "date": "04/07/2026",
-      "time": "10:30",
-      "route": "FA1211",
+      "date": "17/07/2026",
+      "time": "18:00",
+      "route": "FA2581",
       "sharecode": "",
-      "destination": "VIMPERK, HRABICE",
+      "destination": "Bolzano",
       "via": "",
-      "gate": "4A",
-      "status": "A10:46"
+      "gate": "A1",
+      "status": "A17:46"
     },
     {
-      "date": "04/07/2026",
-      "time": "10:30",
-      "route": "CS0767",
+      "date": "17/07/2026",
+      "time": "19:00",
+      "route": "FA1232",
       "sharecode": "FA3015",
-      "destination": "PRAHA, ŘÍČANOVA",
+      "destination": "VIMPERK, LIDL",
       "via": "",
-      "gate": "1A",
-      "status": "A10:45"
+      "gate": "A1",
+      "status": "A18:45"
     },
     {
-      "date": "04/07/2026",
-      "time": "15:00",
-      "route": "UN1287",
+      "date": "18/07/2026",
+      "time": "10:40",
+      "route": "FA1241",
       "sharecode": "",
-      "destination": "PLZEŇ",
+      "destination": "Vimperk, aut. nádraží",
       "via": "",
-      "gate": "1",
-      "status": "A15:23"
+      "gate": "A1",
+      "status": ""
     },
     {
-      "date": "04/07/2026",
+      "date": "18/07/2026",
       "time": "15:45",
-      "route": "FA2281",
+      "route": "FA1234",
       "sharecode": "",
-      "destination": "SUDOMĚŘ",
+      "destination": "Vimperk, Nemocnice",
       "via": "",
       "gate": "",
-      "status": "CL"
-    },
-    {
-      "date": "04/07/2026",
-      "time": "16:00",
-      "route": "OL1081",
-      "sharecode": "",
-      "destination": "SUDOMĚŘ",
-      "via": "",
-      "gate": "4B",
-      "status": "A16:44"
+      "status": ""
     }
   ]
 }
