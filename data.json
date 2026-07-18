@@ -11,7 +11,7 @@
       "expected": "",
       "route": "FA1231",
       "sharecode": "",
-      "destination": "Vimperk, Lidl",
+      "destination": "VIMPERK, LIDL",
       "via": "",
       "gate": "A1",
       "status": "18:22"
@@ -22,8 +22,8 @@
       "expected": "",
       "route": "FA1240",
       "sharecode": "",
-      "destination": "Vimperk, Aut. Nádraží",
-      "via": "",
+      "destination": "VIMPERK, AUTOBUSOVÉ NÁDRAŽÍ",
+      "via": "VIMPERK, TESCO",
       "gate": "A1",
       "status": ""
     },
@@ -45,7 +45,7 @@
       "time": "18:00",
       "route": "FA2581",
       "sharecode": "",
-      "destination": "Bolzano",
+      "destination": "BOLZANO",
       "via": "",
       "gate": "A1",
       "status": "A17:46"
@@ -65,7 +65,7 @@
       "time": "10:40",
       "route": "FA1241",
       "sharecode": "",
-      "destination": "Vimperk, aut. nádraží",
+      "destination": "VIMPERK, AUTOBUSOVÉ NÁDRAŽÍ",
       "via": "",
       "gate": "A1",
       "status": ""
@@ -75,7 +75,7 @@
       "time": "15:45",
       "route": "FA1234",
       "sharecode": "",
-      "destination": "Vimperk, Nemocnice",
+      "destination": "VIMPERK, NEMOCNICE",
       "via": "",
       "gate": "",
       "status": ""
