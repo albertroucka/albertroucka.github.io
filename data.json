@@ -25,7 +25,7 @@
       "destination": "VIMPERK, AUTOBUSOVÉ NÁDRAŽÍ",
       "via": "VIMPERK, TESCO",
       "gate": "A1",
-      "status": ""
+      "status": "10:20"
     },
     {
       "date": "18/07/2026",
@@ -79,7 +79,7 @@
       "destination": "VIMPERK, AUTOBUSOVÉ NÁDRAŽÍ",
       "via": "",
       "gate": "A1",
-      "status": ""
+      "status": "E10:40"
     },
     {
       "date": "18/07/2026",
