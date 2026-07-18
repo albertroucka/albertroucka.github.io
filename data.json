@@ -46,7 +46,7 @@
       "sharecode": "",
       "destination": "PRAHA, ŘÍČANOVA",
       "via": "",
-      "gate": "",
+      "gate": "A1",
       "status": ""
     }
   ],
@@ -88,8 +88,8 @@
       "sharecode": "",
       "destination": "VIMPERK, NEMOCNICE",
       "via": "",
-      "gate": "",
-      "status": ""
+      "gate": "A1",
+      "status": "A15:40"
     }
   ]
 }
