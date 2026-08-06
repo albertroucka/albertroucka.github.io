@@ -520,6 +520,7 @@ async function getData() {
 	const station = document.getElementById("station_name");
 	station.textContent = dataJsonStation[0].name;
 	generateTable(dataJsonDepartures,dataJsonArrivals);
+	setTimeout(getData, 8000);
 }
 
 function generateTable(departures,arrivals) {
@@ -801,7 +802,7 @@ function generateTable(departures,arrivals) {
 }
 
 // Spuštění generování po načtení skriptu
-setInterval(function () { getData(); }, 8000);
+//setInterval(function () { getData(); }, 8000);
 getData();
 </script>
 <!--
