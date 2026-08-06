@@ -6,29 +6,7 @@
   ],
   "dataJsonDepartures": [
     {
-      "date": "17/07/2026",
-      "time": "18:30",
-      "expected": "",
-      "route": "FA1231",
-      "sharecode": "",
-      "destination": "VIMPERK, LIDL",
-      "via": "",
-      "gate": "A1",
-      "status": "18:22"
-    },
-    {
-      "date": "18/07/2026",
-      "time": "10:15",
-      "expected": "",
-      "route": "FA1240",
-      "sharecode": "",
-      "destination": "VIMPERK, AUTOBUSOVÉ NÁDRAŽÍ",
-      "via": "VIMPERK, TESCO",
-      "gate": "A1",
-      "status": "10:20"
-    },
-    {
-      "date": "18/07/2026",
+      "date": "06/08/2026",
       "time": "14:50",
       "expected": "",
       "route": "FA1234",
@@ -36,11 +14,22 @@
       "destination": "VIMPERK, NEMOCNICE",
       "via": "",
       "gate": "A1",
-      "status": "14:48"
+      "status": "14:52"
     },
     {
-      "date": "19/07/2026",
-      "time": "08:00",
+      "date": "06/08/2026",
+      "time": "16:40",
+      "expected": "",
+      "route": "FA1240",
+      "sharecode": "",
+      "destination": "VIMPERK, AUTOBUSOVÉ NÁDRAŽÍ",
+      "via": "VIMPERK, LIDL",
+      "gate": "A1",
+      "status": "D"
+    },
+    {
+      "date": "06/08/2026",
+      "time": "21:00",
       "expected": "",
       "route": "FA1226",
       "sharecode": "",
@@ -52,44 +41,34 @@
   ],
   "dataJsonArrivals": [
     {
-      "date": "17/07/2026",
-      "time": "18:00",
-      "route": "FA2581",
-      "sharecode": "",
-      "destination": "BOLZANO",
-      "via": "",
-      "gate": "A1",
-      "status": "A17:46"
-    },
-    {
-      "date": "17/07/2026",
-      "time": "19:00",
-      "route": "FA1232",
-      "sharecode": "",
-      "destination": "VIMPERK, LIDL",
-      "via": "",
-      "gate": "A1",
-      "status": "A18:45"
-    },
-    {
-      "date": "18/07/2026",
-      "time": "10:40",
-      "route": "FA1241",
-      "sharecode": "",
-      "destination": "VIMPERK, AUTOBUSOVÉ NÁDRAŽÍ",
-      "via": "",
-      "gate": "A1",
-      "status": "A10:42"
-    },
-    {
-      "date": "18/07/2026",
+      "date": "06/08/2026",
       "time": "15:50",
       "route": "FA1234",
       "sharecode": "",
       "destination": "VIMPERK, NEMOCNICE",
       "via": "",
       "gate": "A1",
-      "status": "A15:40"
+      "status": ""
+    },
+    {
+      "date": "06/08/2026",
+      "time": "17:05",
+      "route": "FA1241",
+      "sharecode": "",
+      "destination": "VIMPERK, AUTOBUSOVÉ NÁDRAŽÍ",
+      "via": "",
+      "gate": "A1",
+      "status": "D"
+    },
+    {
+      "date": "07/08/2026",
+      "time": "07:50",
+      "route": "OL1055",
+      "sharecode": "",
+      "destination": "HORNÍ POŘÍČÍ",
+      "via": "",
+      "gate": "",
+      "status": ""
     }
   ]
 }
