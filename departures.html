@@ -797,7 +797,7 @@ function generateTable(departures,arrivals,stationData) {
 
 	const stationElement = document.getElementById("station_name");
     if (stationElement && stationData) {
-        stationElement.textContent = stationData.name || "Ohh";
+        stationElement.textContent = stationData[0].name || "Ohh";
     }
 	
     tBody.innerHTML = "";
