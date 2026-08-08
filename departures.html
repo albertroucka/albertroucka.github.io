@@ -512,30 +512,12 @@
 //Zdroj dat
 async function getData() {
   	//const response = await fetch('data.json');
-	//const response = await fetch(`https://api.npoint.io/8b5e5f5fa84254c06949?${Date.now()}`);
-	const cachedData = localStorage.getItem("infopanel_cache");
-	if(cachedData) {
-        const data = await cachedData.json();
-		const dataJsonStation = data.dataJsonStation;
-        const dataJsonDepartures = data.dataJsonDepartures;
-        const dataJsonArrivals = data.dataJsonArrivals;
-	    generateTable(dataJsonDepartures,dataJsonArrivals,dataJsonStation);
-    } else {
-		const response = await fetch(`https://script.google.com/macros/s/AKfycbyGzUkjBUIcGislZBITF_JpamwFl6ejzy7gYHFYAPppbj-j2tpXdrRa4Jeqt4xkqt6U/exec`);
-        const data = await response.json();
-	    const dataJsonStation = data.dataJsonStation;
-        const dataJsonDepartures = data.dataJsonDepartures;
-        const dataJsonArrivals = data.dataJsonArrivals;
-	    generateTable(dataJsonDepartures,dataJsonArrivals,dataJsonStation);
-	}
-
 	const response = await fetch(`https://script.google.com/macros/s/AKfycbyGzUkjBUIcGislZBITF_JpamwFl6ejzy7gYHFYAPppbj-j2tpXdrRa4Jeqt4xkqt6U/exec`);
     const freshData = await response.json();
-	localStorage.setItem("infopanel_cache", JSON.stringify(freshData));
-	//const dataJsonStation = data.dataJsonStation;
-    //const dataJsonDepartures = data.dataJsonDepartures;
-    ///const dataJsonArrivals = data.dataJsonArrivals;
-	//generateTable(dataJsonDepartures,dataJsonArrivals,dataJsonStation);
+	const dataJsonStation = data.dataJsonStation;
+    const dataJsonDepartures = data.dataJsonDepartures;
+    const dataJsonArrivals = data.dataJsonArrivals;
+	generateTable(dataJsonDepartures,dataJsonArrivals,dataJsonStation);
 	setTimeout(getData, 8000);
 }
 
