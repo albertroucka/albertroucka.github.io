@@ -531,21 +531,8 @@ function generateTable(departures,arrivals,station) {
     const tBody = document.getElementById("table-departures");
 	/*tBody.style.display = "table-row-group"*/
 
-    const nextTBodyId = activeTBodyId === "table-departures" ? "table-departures1" : "table-departures";
-    const currentTBody = document.getElementById(activeTBodyId);
-    const nextTBody = document.getElementById(nextTBodyId);
-    
-    if (!nextTBody) {
-        console.error("V HTML chybí tbody prvky.");
-        return;
-    }
-
-    // Vyčistíme SKRYTÉ tělo tabulky (uživatel nic nevidí, vidí stále stará data v aktivním tbody)
-    nextTBody.innerHTML = "";
-
-
-	//const fragment = document.createDocumentFragment();
-    // Vyčištění stávajícího obsahu
+	const fragment = document.createDocumentFragment();
+    //Vyčištění stávajícího obsahu
     //tBody.innerHTML = "";
 
     departures.forEach(item => {
@@ -673,7 +660,7 @@ function generateTable(departures,arrivals,station) {
         tr.appendChild(tdStatus);
 
         // Přidání hotového řádku do tabulky
-        nextTBody.appendChild(tr);
+        fragment.appendChild(tr);
 
 		// Přidání přes
 		if (item.via){
@@ -705,7 +692,7 @@ function generateTable(departures,arrivals,station) {
   
   				tr.appendChild(td);
 			}
-			nextTBody.appendChild(tr);
+			fragment.appendChild(tr);
 		}
 	});
 
@@ -806,7 +793,7 @@ function generateTable(departures,arrivals,station) {
         tr.appendChild(tdStatus);
 
         // Přidání hotového řádku do tabulky
-        NextTBody.appendChild(tr);
+        fragment.appendChild(tr);
 
 	});
 
@@ -818,18 +805,8 @@ function generateTable(departures,arrivals,station) {
         stationElement.textContent = stationData.name || "";
     }*/
 	
-	nextTBody.classList.remove("table-hidden");
-
-	// 2. Skryjeme starou tabulku (pokud existuje)
-    if (currentTBody) {
-        currentTBody.classList.add("table-hidden"); 
-    }
-
-    // 3. Přepneme ID aktivního těla pro příští cyklus za 8 sekund
-    activeTBodyId = nextTBodyId;
-	
-    //tBody.innerHTML = "";
-	//tBody.appendChild(fragment);
+    tBody.innerHTML = "";
+	tBody.appendChild(fragment);
 	
 	/*const tr = document.createElement("tr");
 	const tdEnd = document.createElement("td");
@@ -842,7 +819,6 @@ function generateTable(departures,arrivals,station) {
 
 // Spuštění generování po načtení skriptu
 //setInterval(function () { getData(); }, 8000);
-let activeTBodyId = "table-departures";
 getData();
 </script>
 <!--
