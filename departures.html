@@ -519,7 +519,7 @@ async function getData() {
     const dataJsonDepartures = data.dataJsonDepartures;
     const dataJsonArrivals = data.dataJsonArrivals;
 	const station = document.getElementById("station");
-	station.textContent = dataJsonStation[0].name;
+	station.textContent = dataJsonStation.name;
 	generateTable(dataJsonDepartures,dataJsonArrivals);
 	setTimeout(getData, 8000);
 }
