@@ -518,7 +518,7 @@ async function getData() {
 	const dataJsonStation = data.dataJsonStation;
     const dataJsonDepartures = data.dataJsonDepartures;
     const dataJsonArrivals = data.dataJsonArrivals;
-	const station = document.getElementById("station_name");
+	const station = document.getElementById("station");
 	station.textContent = dataJsonStation[0].name;
 	generateTable(dataJsonDepartures,dataJsonArrivals);
 	setTimeout(getData, 8000);
@@ -527,9 +527,10 @@ async function getData() {
 function generateTable(departures,arrivals) {
     const tBody = document.getElementById("table-departures");
 	/*tBody.style.display = "table-row-group"*/
-    
+
+	const fragment = document.createDocumentFragment();
     // Vyčištění stávajícího obsahu
-    tBody.innerHTML = "";
+    //tBody.innerHTML = "";
 
     departures.forEach(item => {
         // Vytvoření řádku tabulky
@@ -656,7 +657,7 @@ function generateTable(departures,arrivals) {
         tr.appendChild(tdStatus);
 
         // Přidání hotového řádku do tabulky
-        tBody.appendChild(tr);
+        fragment.appendChild(tr);
 
 		// Přidání přes
 		if (item.via){
@@ -688,7 +689,7 @@ function generateTable(departures,arrivals) {
   
   				tr.appendChild(td);
 			}
-			tBody.appendChild(tr);
+			fragment.appendChild(tr);
 		}
 	});
 
@@ -698,7 +699,7 @@ function generateTable(departures,arrivals) {
 		tdArr.colSpan = 7;
 		tdArr.textContent = "PŘÍJEZDY:";
 		tr.appendChild(tdArr);
-		tBody.appendChild(tr);
+		fragment.appendChild(tr);
 	} 
 
 	arrivals.forEach(item => {
@@ -789,10 +790,12 @@ function generateTable(departures,arrivals) {
         tr.appendChild(tdStatus);
 
         // Přidání hotového řádku do tabulky
-        tBody.appendChild(tr);
+        fragment.appendChild(tr);
 
 	});
 
+    tBody.innerHTML = "";
+	tBody.appendChild(fragment);
 	/*const tr = document.createElement("tr");
 	const tdEnd = document.createElement("td");
 	tdEnd.colSpan = 7;
