@@ -522,7 +522,7 @@ async function getData() {
 	setTimeout(getData, 8000);
 }
 
-function generateTable(departures,arrivals) {
+function generateTable(departures,arrivals,station) {
     const tBody = document.getElementById("table-departures");
 	/*tBody.style.display = "table-row-group"*/
 
@@ -792,8 +792,8 @@ function generateTable(departures,arrivals) {
 
 	});
 
-	const station = document.getElementById("station_name");
-	station.textContent = dataJsonStation.name;
+	const stationName = document.getElementById("station_name");
+	stationName.textContent = station.name;
 	
     tBody.innerHTML = "";
 	tBody.appendChild(fragment);
