@@ -743,7 +743,7 @@ function generateTable(departures,arrivals) {
         // 4. Buňka: Destinace
         const tdDestination = document.createElement("td");
         tdDestination.className = "table__cell table__cell--destination";
-        tdDestination.textContent = item.destination.toUpperCase();
+        tdDestination.textContent = item.destination?.toUpperCase() || "";
         tr.appendChild(tdDestination);
 
         // 5. Buňka: Gate
@@ -792,8 +792,8 @@ function generateTable(departures,arrivals) {
 
 	});
 
-	//const station = document.getElementById("station_name");
-	//station.textContent = dataJsonStation.name;
+	const station = document.getElementById("station_name");
+	station.textContent = dataJsonStation.name;
 	
     tBody.innerHTML = "";
 	tBody.appendChild(fragment);
