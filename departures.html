@@ -682,7 +682,7 @@ function generateTable(departures,arrivals,stationData) {
   				}
 
   				if (i === 4) {
-    				td.textContent = item.via?.toUpperCase() || "";
+    				td.textContent = item.via.toUpperCase();
   				}
   
   				tr.appendChild(td);
