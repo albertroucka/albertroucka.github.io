@@ -817,6 +817,8 @@ function generateTable(departures,arrivals,station) {
     if (stationElement && stationData) {
         stationElement.textContent = stationData.name || "";
     }*/
+	
+	nextTBody.classList.remove("table-hidden");
 
 	// 2. Skryjeme starou tabulku (pokud existuje)
     if (currentTBody) {
