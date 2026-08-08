@@ -818,8 +818,13 @@ function generateTable(departures,arrivals,station) {
         stationElement.textContent = stationData.name || "";
     }*/
 
-    // 2. Zobrazení nového těla tabulky a skrytí starého těla tabulky
-    nextTBody.classList.remove("table-hidden");
+	// 2. Skryjeme starou tabulku (pokud existuje)
+    if (currentTBody) {
+        currentTBody.classList.add("table-hidden"); 
+    }
+
+    // 3. Přepneme ID aktivního těla pro příští cyklus za 8 sekund
+    activeTBodyId = nextTBodyId;
 	
     //tBody.innerHTML = "";
 	//tBody.appendChild(fragment);
