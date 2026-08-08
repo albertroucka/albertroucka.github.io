@@ -522,7 +522,7 @@ async function getData() {
 	setTimeout(getData, 8000);
 }
 
-function generateTable(departures,arrivals,station) {
+function generateTable(departures,arrivals,stationData) {
     const tBody = document.getElementById("table-departures");
 	/*tBody.style.display = "table-row-group"*/
 
@@ -589,7 +589,7 @@ function generateTable(departures,arrivals,station) {
         // 4. Buňka: Destinace
         const tdDestination = document.createElement("td");
         tdDestination.className = "table__cell table__cell--destination";
-        tdDestination.textContent = item.destination;
+        tdDestination.textContent = item.destination?.toUpperCase() || "";
         tr.appendChild(tdDestination);
 
         // 5. Buňka: Gate
@@ -795,10 +795,10 @@ function generateTable(departures,arrivals,station) {
 	//const stationName = document.getElementById("station_name");
 	//stationName.textContent = station.name;
 
-	/*const stationElement = document.getElementById("station_name");
+	const stationElement = document.getElementById("station_name");
     if (stationElement && stationData) {
         stationElement.textContent = stationData.name || "";
-    }*/
+    }
 	
     tBody.innerHTML = "";
 	tBody.appendChild(fragment);
