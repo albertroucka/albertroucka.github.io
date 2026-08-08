@@ -361,6 +361,10 @@
 			animation: text-animation1 ease 8s infinite;
 		}
 
+		.table-hidden {
+			display: none !important
+		}
+
 		@keyframes text-animation0 {
 			0% {
 				top: 0;
@@ -461,6 +465,7 @@
 					<tbody id="table-departures">
         				<!-- Zde JavaScript vloží dynamické řádky -->
     				</tbody>
+					<tbody id="table-departures1" class="table-hidden"></tbody>
 					<!-- KEEP LAST 
 					<tr class="table__row table__row--last">
 						<td colspan="7"></td>
@@ -526,7 +531,20 @@ function generateTable(departures,arrivals,station) {
     const tBody = document.getElementById("table-departures");
 	/*tBody.style.display = "table-row-group"*/
 
-	const fragment = document.createDocumentFragment();
+    const nextTBodyId = activeTBodyId === "table-departures" ? "table-departures1" : "table-departures";
+    const currentTBody = document.getElementById(activeTBodyId);
+    const nextTBody = document.getElementById(nextTBodyId);
+    
+    if (!nextTBody) {
+        console.error("V HTML chybí tbody prvky.");
+        return;
+    }
+
+    // Vyčistíme SKRYTÉ tělo tabulky (uživatel nic nevidí, vidí stále stará data v aktivním tbody)
+    nextTBody.innerHTML = "";
+
+
+	//const fragment = document.createDocumentFragment();
     // Vyčištění stávajícího obsahu
     //tBody.innerHTML = "";
 
@@ -655,7 +673,7 @@ function generateTable(departures,arrivals,station) {
         tr.appendChild(tdStatus);
 
         // Přidání hotového řádku do tabulky
-        fragment.appendChild(tr);
+        nextTBody.appendChild(tr);
 
 		// Přidání přes
 		if (item.via){
@@ -687,7 +705,7 @@ function generateTable(departures,arrivals,station) {
   
   				tr.appendChild(td);
 			}
-			fragment.appendChild(tr);
+			nextTBody.appendChild(tr);
 		}
 	});
 
@@ -697,7 +715,7 @@ function generateTable(departures,arrivals,station) {
 		tdArr.colSpan = 7;
 		tdArr.textContent = "PŘÍJEZDY:";
 		tr.appendChild(tdArr);
-		fragment.appendChild(tr);
+		nextTBody.appendChild(tr);
 	} 
 
 	arrivals.forEach(item => {
@@ -788,15 +806,24 @@ function generateTable(departures,arrivals,station) {
         tr.appendChild(tdStatus);
 
         // Přidání hotového řádku do tabulky
-        fragment.appendChild(tr);
+        NextTBody.appendChild(tr);
 
 	});
 
 	//const stationName = document.getElementById("station_name");
 	//stationName.textContent = station.name;
+
+	const stationElement = document.getElementById("station_name");
+    if (stationElement && stationData) {
+        stationElement.textContent = stationData.name || "";
+    }
+
+    // 2. Zobrazení nového těla tabulky a skrytí starého těla tabulky
+    nextTBody.classList.remove("table-hidden");
 	
-    tBody.innerHTML = "";
-	tBody.appendChild(fragment);
+    //tBody.innerHTML = "";
+	//tBody.appendChild(fragment);
+	
 	/*const tr = document.createElement("tr");
 	const tdEnd = document.createElement("td");
 	tdEnd.colSpan = 7;
@@ -808,6 +835,7 @@ function generateTable(departures,arrivals,station) {
 
 // Spuštění generování po načtení skriptu
 //setInterval(function () { getData(); }, 8000);
+let activeTBodyId = "table-departures";
 getData();
 </script>
 <!--
